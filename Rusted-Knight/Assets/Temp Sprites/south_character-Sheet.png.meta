@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 5cd4d96dffd2a344c819f71289d2461c
+guid: 360c61053936bcc42a457d20ba4df987
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8650887515463553255
-    second: Down_Movement_Sprites_0
+      213: -5019397864530669475
+    second: south_character-Sheet_0
   - first:
-      213: -5501574898856586101
-    second: Down_Movement_Sprites_1
+      213: -4393715003077297711
+    second: south_character-Sheet_1
   - first:
-      213: 4484614633024284175
-    second: Down_Movement_Sprites_2
+      213: -5760674944813047717
+    second: south_character-Sheet_2
   - first:
-      213: -7746169261151282556
-    second: Down_Movement_Sprites_3
+      213: -213001424985245380
+    second: south_character-Sheet_3
   - first:
-      213: 958995776983824956
-    second: Down_Movement_Sprites_4
+      213: -3449609412628998215
+    second: south_character-Sheet_4
+  - first:
+      213: -7892711622605609489
+    second: south_character-Sheet_5
+  - first:
+      213: -3945194484432790458
+    second: south_character-Sheet_6
+  - first:
+      213: -4782785916112475186
+    second: south_character-Sheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Down_Movement_Sprites_0
+      name: south_character-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 24
+        y: 15
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 91feee893afd1f780800000000000000
-      internalID: -8650887515463553255
+      spriteID: d509b427c34875ab0800000000000000
+      internalID: -5019397864530669475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Down_Movement_Sprites_1
+      name: south_character-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 89
+        y: 16
+        width: 14
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b84927037ca76a3b0800000000000000
-      internalID: -5501574898856586101
+      spriteID: 1d9f54dcb736603c0800000000000000
+      internalID: -4393715003077297711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Down_Movement_Sprites_2
+      name: south_character-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 152
+        y: 15
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f066eeb8f3d8c3e30800000000000000
-      internalID: 4484614633024284175
+      spriteID: b50ece7b8a8fd00b0800000000000000
+      internalID: -5760674944813047717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Down_Movement_Sprites_3
+      name: south_character-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 217
+        y: 16
+        width: 14
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48a17031914108490800000000000000
-      internalID: -7746169261151282556
+      spriteID: c393a1f15544b0df0800000000000000
+      internalID: -213001424985245380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Down_Movement_Sprites_4
+      name: south_character-Sheet_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 280
+        y: 15
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +237,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3a783404990f4d00800000000000000
-      internalID: 958995776983824956
+      spriteID: 9b7976a14868020d0800000000000000
+      internalID: -3449609412628998215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south_character-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 16
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5eefbb894777290800000000000000
+      internalID: -7892711622605609489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south_character-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 15
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c9d89d48adf39c0800000000000000
+      internalID: -3945194484432790458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south_character-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 16
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbef51bc8120adb0800000000000000
+      internalID: -4782785916112475186
       vertices: []
       indices: 
       edges: []
@@ -238,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1b533264af984eb42bc7aa872e620031
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -246,15 +321,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Down_Movement_Sprites_0: -8650887515463553255
-      Down_Movement_Sprites_1: -5501574898856586101
-      Down_Movement_Sprites_2: 4484614633024284175
-      Down_Movement_Sprites_3: -7746169261151282556
-      Down_Movement_Sprites_4: 958995776983824956
+      south_character-Sheet_0: -5019397864530669475
+      south_character-Sheet_1: -4393715003077297711
+      south_character-Sheet_2: -5760674944813047717
+      south_character-Sheet_3: -213001424985245380
+      south_character-Sheet_4: -3449609412628998215
+      south_character-Sheet_5: -7892711622605609489
+      south_character-Sheet_6: -3945194484432790458
+      south_character-Sheet_7: -4782785916112475186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

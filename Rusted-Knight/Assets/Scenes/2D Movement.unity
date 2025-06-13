@@ -406,12 +406,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8650887515463553255, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
+  m_Sprite: {fileID: -5019397864530669475, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.16, y: 0.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -474,23 +474,20 @@ MonoBehaviour:
   body: {fileID: 1752262157}
   spriteRend: {fileID: 1752262156}
   upSprites:
-  - {fileID: -8650887515463553255, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: -5501574898856586101, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: 4484614633024284175, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: -7746169261151282556, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: 958995776983824956, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
+  - {fileID: -5019397864530669475, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
+  - {fileID: -4393715003077297711, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
+  - {fileID: -5760674944813047717, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
+  - {fileID: -213001424985245380, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
   downSprites:
-  - {fileID: -8650887515463553255, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: -5501574898856586101, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: 4484614633024284175, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: -7746169261151282556, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
-  - {fileID: 958995776983824956, guid: 5cd4d96dffd2a344c819f71289d2461c, type: 3}
+  - {fileID: -5019397864530669475, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
+  - {fileID: -4393715003077297711, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
+  - {fileID: -5760674944813047717, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
+  - {fileID: -213001424985245380, guid: 360c61053936bcc42a457d20ba4df987, type: 3}
   horizontalSprites:
-  - {fileID: -6682697543700562630, guid: 37bb8a2469b6abf4f81b0b38a3760533, type: 3}
-  - {fileID: 8858354608905292557, guid: 37bb8a2469b6abf4f81b0b38a3760533, type: 3}
-  - {fileID: 1693064478386288119, guid: 37bb8a2469b6abf4f81b0b38a3760533, type: 3}
-  - {fileID: 5315232347605928326, guid: 37bb8a2469b6abf4f81b0b38a3760533, type: 3}
-  - {fileID: -9064893795530842966, guid: 37bb8a2469b6abf4f81b0b38a3760533, type: 3}
+  - {fileID: 4366135031071119720, guid: 2eff81f2c9895514c957b63327326926, type: 3}
+  - {fileID: 371902045788497972, guid: 2eff81f2c9895514c957b63327326926, type: 3}
+  - {fileID: 4366135031071119720, guid: 2eff81f2c9895514c957b63327326926, type: 3}
+  - {fileID: -3242076177768844045, guid: 2eff81f2c9895514c957b63327326926, type: 3}
   walkspeed: 1
   framerate: 5
 --- !u!1660057539 &9223372036854775807
