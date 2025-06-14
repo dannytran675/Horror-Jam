@@ -14,6 +14,8 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float xPos = transform.position.x;
+        Debug.Log(xPos);
         transform.position = target.position + offset;
                
     }
