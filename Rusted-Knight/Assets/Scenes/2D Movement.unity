@@ -687,6 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1198590174}
   - component: {fileID: 1198590175}
+  - component: {fileID: 1198590176}
   m_Layer: 0
   m_Name: GateEntranceBox
   m_TagString: Interactable
@@ -756,6 +757,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0912113, y: 0.37759188}
   m_EdgeRadius: 0
+--- !u!114 &1198590176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198590173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a7a7ad901360b4bb72d11e3a4bac27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateEntrance: {fileID: 1198590175}
+  square: {fileID: 2043711671}
 --- !u!1 &1301379351
 GameObject:
   m_ObjectHideFlags: 0
