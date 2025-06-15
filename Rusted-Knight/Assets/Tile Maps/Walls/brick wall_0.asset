@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: east_character-Sheet_1
+  m_Name: brick wall_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 371902045788497972, guid: 2eff81f2c9895514c957b63327326926, type: 3}
+  m_Sprite: {fileID: -4944714054449732721, guid: 77610ba9ba1e2e44ea024d1c3776aee1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
