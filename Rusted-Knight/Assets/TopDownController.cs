@@ -27,12 +27,26 @@ public class TopDownController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        WalkingExecution();
+    }
+
+    void WalkingExecution()
+    {
         //Gets the general walking direction of the player based on input
         direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         //Returns the unit vector to ensure movement isn't faster diagonally
         direction = direction.normalized;
 
-        body.linearVelocity = direction * walkspeed;
+
+        //Stops movement during paused sections such as dialogue and fighting.
+        if (PauseController.IsGamePaused)
+        {
+            body.linearVelocity = Vector2.zero;
+        }
+        else
+        {
+            body.linearVelocity = direction * walkspeed;
+        }
 
         HandleHorizontalFlip();
 
