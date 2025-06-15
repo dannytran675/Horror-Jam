@@ -1,31 +1,10 @@
 fileFormatVersion: 2
-guid: 360c61053936bcc42a457d20ba4df987
+guid: be47d75388a8aad45931f83fed699c1b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5019397864530669475
-    second: south_character-Sheet_0
-  - first:
-      213: -4393715003077297711
-    second: south_character-Sheet_1
-  - first:
-      213: -5760674944813047717
-    second: south_character-Sheet_2
-  - first:
-      213: -213001424985245380
-    second: south_character-Sheet_3
-  - first:
-      213: -3449609412628998215
-    second: south_character-Sheet_4
-  - first:
-      213: -7892711622605609489
-    second: south_character-Sheet_5
-  - first:
-      213: -3945194484432790458
-    second: south_character-Sheet_6
-  - first:
-      213: -4782785916112475186
-    second: south_character-Sheet_7
+      213: 4723107735738678597
+    second: Idle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: south_character-Sheet_0
+      name: Idle_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 15
+        x: 0
+        y: 0
         width: 16
-        height: 33
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,162 +128,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d509b427c34875ab0800000000000000
-      internalID: -5019397864530669475
+      spriteID: 54d7a982679db8140800000000000000
+      internalID: 4723107735738678597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: south_character-Sheet_1
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 16
-        width: 14
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d9f54dcb736603c0800000000000000
-      internalID: -4393715003077297711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: south_character-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 15
+        x: 16
+        y: 0
         width: 16
-        height: 33
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b50ece7b8a8fd00b0800000000000000
-      internalID: -5760674944813047717
+      spriteID: a0ab256ec9f1afd4697a0c35bab13922
+      internalID: 735450235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: south_character-Sheet_3
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 217
-        y: 16
-        width: 14
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c393a1f15544b0df0800000000000000
-      internalID: -213001424985245380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: south_character-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 15
+        x: 32
+        y: 0
         width: 16
-        height: 33
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b7976a14868020d0800000000000000
-      internalID: -3449609412628998215
+      spriteID: 74fa71595170c6d418113ed58f96c65c
+      internalID: -674453837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: south_character-Sheet_5
+      name: Idle_3
       rect:
         serializedVersion: 2
-        x: 345
-        y: 16
-        width: 14
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe5eefbb894777290800000000000000
-      internalID: -7892711622605609489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: south_character-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 408
-        y: 15
+        x: 48
+        y: 0
         width: 16
-        height: 33
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 64c9d89d48adf39c0800000000000000
-      internalID: -3945194484432790458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: south_character-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 473
-        y: 16
-        width: 14
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ecbef51bc8120adb0800000000000000
-      internalID: -4782785916112475186
+      spriteID: c657d198610c31a48a966421e1fb94da
+      internalID: 2009044316
       vertices: []
       indices: 
       edges: []
@@ -313,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 90e2b632e6750f247830b22c19c017ac
     internalID: 0
     vertices: []
     indices: 
@@ -321,16 +212,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      south_character-Sheet_0: -5019397864530669475
-      south_character-Sheet_1: -4393715003077297711
-      south_character-Sheet_2: -5760674944813047717
-      south_character-Sheet_3: -213001424985245380
-      south_character-Sheet_4: -3449609412628998215
-      south_character-Sheet_5: -7892711622605609489
-      south_character-Sheet_6: -3945194484432790458
-      south_character-Sheet_7: -4782785916112475186
+      Idle_0: 4723107735738678597
+      Idle_1: 735450235
+      Idle_2: -674453837
+      Idle_3: 2009044316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

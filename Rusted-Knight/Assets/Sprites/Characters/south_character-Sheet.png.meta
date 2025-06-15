@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 2eff81f2c9895514c957b63327326926
+guid: 360c61053936bcc42a457d20ba4df987
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4366135031071119720
-    second: east_character-Sheet_0
+      213: -5019397864530669475
+    second: south_character-Sheet_0
   - first:
-      213: 371902045788497972
-    second: east_character-Sheet_1
+      213: -4393715003077297711
+    second: south_character-Sheet_1
   - first:
-      213: -3242076177768844045
-    second: east_character-Sheet_2
+      213: -5760674944813047717
+    second: south_character-Sheet_2
   - first:
-      213: -5846005813961437379
-    second: east_character-Sheet_3
+      213: -213001424985245380
+    second: south_character-Sheet_3
   - first:
-      213: 234535386926070507
-    second: east_character-Sheet_4
+      213: -3449609412628998215
+    second: south_character-Sheet_4
+  - first:
+      213: -7892711622605609489
+    second: south_character-Sheet_5
+  - first:
+      213: -3945194484432790458
+    second: south_character-Sheet_6
+  - first:
+      213: -4782785916112475186
+    second: south_character-Sheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: east_character-Sheet_0
+      name: south_character-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 24
+        y: 15
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86912609da0a79c30800000000000000
-      internalID: 4366135031071119720
+      spriteID: d509b427c34875ab0800000000000000
+      internalID: -5019397864530669475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_1
+      name: south_character-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 89
+        y: 16
+        width: 14
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 438e672b0f2492500800000000000000
-      internalID: 371902045788497972
+      spriteID: 1d9f54dcb736603c0800000000000000
+      internalID: -4393715003077297711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_2
+      name: south_character-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 152
+        y: 15
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f4f451c4e4d103d0800000000000000
-      internalID: -3242076177768844045
+      spriteID: b50ece7b8a8fd00b0800000000000000
+      internalID: -5760674944813047717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_3
+      name: south_character-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 217
+        y: 16
+        width: 14
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3fc5f78fa0dedea0800000000000000
-      internalID: -5846005813961437379
+      spriteID: c393a1f15544b0df0800000000000000
+      internalID: -213001424985245380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_4
+      name: south_character-Sheet_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 280
+        y: 15
+        width: 16
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +237,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: beabcf811bc314300800000000000000
-      internalID: 234535386926070507
+      spriteID: 9b7976a14868020d0800000000000000
+      internalID: -3449609412628998215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south_character-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 16
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5eefbb894777290800000000000000
+      internalID: -7892711622605609489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south_character-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 15
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c9d89d48adf39c0800000000000000
+      internalID: -3945194484432790458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south_character-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 16
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbef51bc8120adb0800000000000000
+      internalID: -4782785916112475186
       vertices: []
       indices: 
       edges: []
@@ -238,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3f7868c018a317e4bbadaa851ef83714
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -246,15 +321,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      east_character-Sheet_0: 4366135031071119720
-      east_character-Sheet_1: 371902045788497972
-      east_character-Sheet_2: -3242076177768844045
-      east_character-Sheet_3: -5846005813961437379
-      east_character-Sheet_4: 234535386926070507
+      south_character-Sheet_0: -5019397864530669475
+      south_character-Sheet_1: -4393715003077297711
+      south_character-Sheet_2: -5760674944813047717
+      south_character-Sheet_3: -213001424985245380
+      south_character-Sheet_4: -3449609412628998215
+      south_character-Sheet_5: -7892711622605609489
+      south_character-Sheet_6: -3945194484432790458
+      south_character-Sheet_7: -4782785916112475186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
