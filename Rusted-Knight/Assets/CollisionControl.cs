@@ -6,9 +6,9 @@ public class CollisionControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp("space") && colliding)
+        if (isInteractKey() && colliding)
         {
-            print("Space key was released");
+            print("Interactable Key Pressed");
         }
     }
     void OnTriggerStay2D(Collider2D col)
@@ -26,6 +26,13 @@ public class CollisionControl : MonoBehaviour
             Debug.Log("EXIT INTERACTABLE!");
             colliding = false;
         }
+    }
+
+    bool isInteractKey()
+    {
+        bool isInteractKey = Input.GetKeyUp("return") || Input.GetKeyUp("space");
+        isInteractKey = isInteractKey || Input.GetKeyUp("e") || Input.GetKeyUp("z");
+        return isInteractKey;
     }
     
 }
