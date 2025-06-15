@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 230964931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3556252, y: 9.1623955, z: -10}
+  m_LocalPosition: {x: 2.35562, y: 9.26702, z: -10}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -801,7 +801,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 6.245741, y: 2.7148247}
+  m_Offset: {x: 6.245741, y: 4.736992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -811,7 +811,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 39.989235, y: 25.89515}
+  m_Size: {x: 39.989235, y: 29.939484}
   m_EdgeRadius: 0
 --- !u!1 &1198590173
 GameObject:
@@ -1220,7 +1220,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -1463,7 +1463,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -8397,8 +8397,8 @@ Tilemap:
   - first: {x: -6, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 18
-      m_TileSpriteIndex: 7
+      m_TileIndex: 20
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -13942,11 +13942,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8ae2daddceccefd4eb948a2fd7cac5be, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 9dd5360a21b23994b81869ddd2229410, type: 2}
-  - m_RefCount: 66
+  - m_RefCount: 65
     m_Data: {fileID: 11400000, guid: 9fc525a6062241445a9da4cac176e70b, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 05a92e645aa16494190e7b507d232c69, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: b2de07b6afef60e4d903507e7afbdfd2, type: 2}
   - m_RefCount: 33
     m_Data: {fileID: 11400000, guid: ca43f9d146f17894292c6883899b2b8f, type: 2}
@@ -13985,7 +13985,7 @@ Tilemap:
     m_Data: {fileID: -1513761949, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 1977423398, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
-  - m_RefCount: 66
+  - m_RefCount: 65
     m_Data: {fileID: 1949251011, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
   - m_RefCount: 65
     m_Data: {fileID: 101898015, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
@@ -14009,7 +14009,7 @@ Tilemap:
     m_Data: {fileID: 1757859790, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
   - m_RefCount: 33
     m_Data: {fileID: 3925969096683655625, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 2119011911, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 1730564370, guid: 213a71e64d5a0d748b70292a4b4e0fa9, type: 3}
@@ -14236,7 +14236,7 @@ Transform:
   m_GameObject: {fileID: 2064703806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3556252, y: 9.1623955, z: -10}
+  m_LocalPosition: {x: 2.35562, y: 9.26702, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
