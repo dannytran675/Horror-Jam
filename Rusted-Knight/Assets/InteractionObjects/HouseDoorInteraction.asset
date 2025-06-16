@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8858d5c92e9d2914bb34eaa6b8cfb6a3, type: 3}
-  m_Name: GateInteraction
+  m_Name: HouseDoorInteraction
   m_EditorClassIdentifier: 
   npcName: 
   npcPortrait: {fileID: 0}
   dialogueLines:
-  - Not yet.
+  - It's rude to enter someone's house without permission.
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8858d5c92e9d2914bb34eaa6b8cfb6a3, type: 3}
+  m_Name: MayorInteraction
+  m_EditorClassIdentifier: 
+  npcName: Mayor
+  npcPortrait: {fileID: 0}
+  dialogueLines:
+  - Ah, so you're the hero I've been hearing about?
+  - We've had many like you appear in this town in the past.
+  - And so, we know how to get you home.
+  - But it won't be an easy task.
+  - Everyone before you has failed to reach their destination.
+  - You must leave through these gates and follow the dirt path.
+  - Your goal will be the Snowpeak Towers, where the Demon King resides.
+  - Once you kill the Demon King, only then will you be able to return home.
+  - I wish you the best of luck, O'Rusted Knight.
+  typingSpeed: 0.05
+  voiceSound: {fileID: 0}
+  voicePitch: 1

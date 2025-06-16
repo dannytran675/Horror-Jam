@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8858d5c92e9d2914bb34eaa6b8cfb6a3, type: 3}
-  m_Name: GateInteraction
+  m_Name: StrangeVillagerInteraction
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Strange Villager
   npcPortrait: {fileID: 0}
   dialogueLines:
-  - Not yet.
+  - See that guy up there?
+  - There's something up with him...
+  - At night, once a month...
+  - I hear screams and strange howls coming from his house.
+  - You don't think...
+  - He needs someone to scratch his back!
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1

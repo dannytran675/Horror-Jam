@@ -15,7 +15,8 @@ MonoBehaviour:
   npcName: System
   npcPortrait: {fileID: 0}
   dialogueLines:
-  - You cannot enter this building.
+  - You sense the holy spirit watching over you.
+  - Maybe you can come pray later...
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1
