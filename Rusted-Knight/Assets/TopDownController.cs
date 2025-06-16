@@ -46,22 +46,22 @@ public class TopDownController : MonoBehaviour
         else
         {
             body.linearVelocity = direction * walkspeed;
+            HandleHorizontalFlip();
+
+            List<Sprite> directionSprites = getDirectionSprites();
+
+            if (directionSprites != null) {
+                float walkDuration = Time.time - idleTime;
+
+                int frame = (int)((walkDuration * framerate) % directionSprites.Count);
+
+                spriteRend.sprite = directionSprites[frame];
+            }
+            else {
+                idleTime = Time.time;
+            }
         }
 
-        HandleHorizontalFlip();
-
-        List<Sprite> directionSprites = getDirectionSprites();
-
-        if (directionSprites != null) {
-            float walkDuration = Time.time - idleTime;
-
-            int frame = (int)((walkDuration * framerate) % directionSprites.Count);
-
-            spriteRend.sprite = directionSprites[frame];
-        }
-        else {
-            idleTime = Time.time;
-        }
     }
 
     void HandleHorizontalFlip()
