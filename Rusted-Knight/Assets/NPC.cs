@@ -37,6 +37,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     void StartDialogue()
     {
+        Debug.Log("StartDialogue");
         isDialogueActive = true;
         dialogueIndex = 0;
 
@@ -95,6 +96,7 @@ public class NPC : MonoBehaviour, IInteractable
         StopAllCoroutines();
         //End of dialogue
         isDialogueActive = false;
+        isTyping = false;
         //Resetting text
         dialogueText.SetText("");
         //Hides dialogue box
