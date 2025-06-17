@@ -343,7 +343,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 112123475}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &174660073
+=======
+--- !u!1 &140518424
+>>>>>>> Stashed changes
 =======
 --- !u!1 &140518424
 >>>>>>> Stashed changes
@@ -355,6 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 174660074}
   - component: {fileID: 174660077}
   - component: {fileID: 174660076}
@@ -362,12 +367,17 @@ GameObject:
   m_Layer: 5
   m_Name: Button
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 140518425}
   - component: {fileID: 140518428}
   - component: {fileID: 140518427}
   - component: {fileID: 140518426}
   m_Layer: 0
   m_Name: House
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,8 +385,13 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!224 &174660074
 RectTransform:
+=======
+--- !u!4 &140518425
+Transform:
+>>>>>>> Stashed changes
 =======
 --- !u!4 &140518425
 Transform:
@@ -385,6 +400,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_GameObject: {fileID: 174660073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -403,6 +419,8 @@ Transform:
 --- !u!114 &174660075
 MonoBehaviour:
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 140518424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -414,11 +432,15 @@ MonoBehaviour:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &140518426
 BoxCollider2D:
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_GameObject: {fileID: 174660073}
   m_Enabled: 1
@@ -503,6 +525,8 @@ MonoBehaviour:
 --- !u!222 &174660077
 CanvasRenderer:
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 140518424}
   m_Enabled: 1
   serializedVersion: 3
@@ -546,15 +570,21 @@ CanvasRenderer:
 --- !u!50 &140518427
 Rigidbody2D:
   serializedVersion: 5
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 174660073}
   m_CullTransparentMesh: 1
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 140518424}
   m_BodyType: 0
   m_Simulated: 1
@@ -630,6 +660,9 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &227444555
 GameObject:
@@ -2915,7 +2948,11 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &1085956237
+=======
+--- !u!1 &1012972355
+>>>>>>> Stashed changes
 =======
 --- !u!1 &1012972355
 >>>>>>> Stashed changes
@@ -2926,6 +2963,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   - component: {fileID: 1085956238}
   - component: {fileID: 1085956240}
@@ -2939,10 +2977,16 @@ GameObject:
   m_Layer: 0
   m_Name: Green House
 >>>>>>> Stashed changes
+=======
+  - component: {fileID: 1012972356}
+  m_Layer: 0
+  m_Name: Green House
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_IsActive: 0
 --- !u!224 &1085956238
@@ -2952,10 +2996,16 @@ RectTransform:
 --- !u!4 &1012972356
 Transform:
 >>>>>>> Stashed changes
+=======
+  m_IsActive: 1
+--- !u!4 &1012972356
+Transform:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_GameObject: {fileID: 1085956237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2972,6 +3022,8 @@ Transform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085956239
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 1012972355}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -3017,12 +3069,16 @@ Transform:
   m_Father: {fileID: 836975861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1060595289
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_GameObject: {fileID: 1085956237}
   m_Enabled: 1
@@ -3081,6 +3137,8 @@ CanvasGroup:
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 1060595287}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3137,6 +3195,9 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3658928, y: 0.93335795}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1149641934
 GameObject:
