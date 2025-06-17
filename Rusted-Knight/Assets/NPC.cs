@@ -9,8 +9,8 @@ public class NPC : MonoBehaviour, IInteractable
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
-    private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    protected int dialogueIndex;
+    protected bool isTyping, isDialogueActive;
 
     public bool CanInteract()
     {
@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-    void StartDialogue()
+    protected void StartDialogue()
     {
         isDialogueActive = true;
         dialogueIndex = 0;
@@ -47,7 +47,7 @@ public class NPC : MonoBehaviour, IInteractable
         StartCoroutine(TypeLine());
     }
 
-    void NextLine()
+    protected void NextLine()
     {
         if (isTyping)
         {
@@ -67,7 +67,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-    IEnumerator TypeLine()
+    protected IEnumerator TypeLine()
     {
         isTyping = true;
         dialogueText.SetText("");
