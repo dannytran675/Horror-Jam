@@ -1,15 +1,14 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
-using System.Collections;
-public class StartingDialogue : NPC
+
+public class StartingDialogue : MonoBehaviour
 {
+    public IInteractable dialogue;
+
     void Update()
     {
-        if (isInteractKey())
+        if (interactionPossible() && isInteractKey())
         {
-            Interact();
+            dialogue.Interact();
         }
     }
     bool isInteractKey()
@@ -18,4 +17,10 @@ public class StartingDialogue : NPC
         isInteractKey = isInteractKey || Input.GetKeyUp("e") || Input.GetKeyUp("z");
         return isInteractKey;
     }
+
+    bool interactionPossible()
+    {
+        return dialogue != null;
+    }
+
 }
