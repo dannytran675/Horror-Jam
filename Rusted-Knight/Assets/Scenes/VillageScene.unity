@@ -525,7 +525,7 @@ Transform:
   m_GameObject: {fileID: 230964931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.684798, y: 14.677412, z: -10}
+  m_LocalPosition: {x: 14.684798, y: 15.696022, z: -10}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3229,11 +3229,8 @@ MonoBehaviour:
   - {fileID: 6292311989711182975, guid: af76205048affd54ea21cb95efde39f3, type: 3}
   - {fileID: 7774200154505244732, guid: af76205048affd54ea21cb95efde39f3, type: 3}
   - {fileID: -8418123358424196879, guid: af76205048affd54ea21cb95efde39f3, type: 3}
-  horizontalSprites:
-  - {fileID: 4366135031071119720, guid: 2eff81f2c9895514c957b63327326926, type: 3}
-  - {fileID: 371902045788497972, guid: 2eff81f2c9895514c957b63327326926, type: 3}
-  - {fileID: 4366135031071119720, guid: 2eff81f2c9895514c957b63327326926, type: 3}
-  - {fileID: -3242076177768844045, guid: 2eff81f2c9895514c957b63327326926, type: 3}
+  rightSprites: []
+  leftSprites: []
   walkspeed: 4
   runningMultiplier: 2
   framerate: 5
@@ -15865,7 +15862,7 @@ Transform:
   m_GameObject: {fileID: 2064703806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.684798, y: 14.677412, z: -10}
+  m_LocalPosition: {x: 14.684798, y: 15.696022, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

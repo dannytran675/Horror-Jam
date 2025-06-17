@@ -6,9 +6,8 @@ public class InteractionControl : MonoBehaviour
 
     void Update()
     {
-        if (isInteractKey() && interactionPossible())
+        if (interactionPossible() && isInteractKey())
         {
-            Debug.Log("Interact Start!");
             interactableInRange.Interact();
         }
     }
