@@ -9,6 +9,11 @@ public class StartingDialogue : NPC
             Interact();
         }
     }
+
+    void Start()
+    {
+        Interact();
+    }
     bool isInteractKey()
     {
         bool isInteractKey = Input.GetKeyUp("return") || Input.GetKeyUp("space");
