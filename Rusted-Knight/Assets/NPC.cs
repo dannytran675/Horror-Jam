@@ -67,7 +67,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-    protected IEnumerator TypeLine()
+    protected virtual IEnumerator TypeLine()
     {
         isTyping = true;
         dialogueText.SetText("");
