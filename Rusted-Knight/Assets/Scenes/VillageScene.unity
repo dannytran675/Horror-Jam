@@ -2719,6 +2719,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 552488457}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: EndDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 970009026}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: EndDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 432624359}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: EndDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &968697228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3855,7 +3891,6 @@ GameObject:
   - component: {fileID: 1752262156}
   - component: {fileID: 1752262159}
   - component: {fileID: 1752262160}
-  - component: {fileID: 1752262161}
   - component: {fileID: 1752262162}
   m_Layer: 0
   m_Name: Player
@@ -4046,19 +4081,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6275215, y: 0.6124649}
   m_EdgeRadius: 0
---- !u!114 &1752262161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752262155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e3a361c4df43e4dbc5a727cbb66392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliding: 0
 --- !u!114 &1752262162
 MonoBehaviour:
   m_ObjectHideFlags: 0
