@@ -14,7 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   npcPortrait: {fileID: 0}
-  dialogueLines: []
+  dialogueLines:
+  - You were walking back home from school.
+  - "You aced your test and were quite giddy, imagining your mom\u2019s reaction
+    to the endeavor of your efforts."
+  - Crossing the street, a block before your house,
+  - "Maybe it was your test\u2019s fault,"
+  - causing you to be distracted by your thoughts,
+  - "Or perhaps the truck driver should\u2019ve been paying more attention,"
+  - Instead of being on the phone with his daughter,
+  - But you felt a heavy weight ram against you
+  - 'And everything went black. '
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1
