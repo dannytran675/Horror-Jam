@@ -49,7 +49,6 @@ public class TopDownController : MonoBehaviour
         {
             runningCommand();
             body.linearVelocity = direction * walkspeed;
-            HandleHorizontalFlip();
 
             List<Sprite> directionSprites = getDirectionSprites();
 
@@ -67,18 +66,6 @@ public class TopDownController : MonoBehaviour
             }
         }
 
-    }
-
-    void HandleHorizontalFlip()
-    {
-        if (!spriteRend.flipX && direction.x < 0)
-        {
-            spriteRend.flipX = true;
-        }
-        else if (spriteRend.flipX && direction.x > 0)
-        {
-            spriteRend.flipX = false;
-        }
     }
 
     List<Sprite> getDirectionSprites()
