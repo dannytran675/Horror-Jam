@@ -7,15 +7,38 @@ using System.Collections;
 
 public class GateInteraction : NPC
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public NPCDialogue gateOpeningDialogue;
+    public bool gateOpenable;
+    public GameObject answerObjects;
+    public GameObject exitButton;
+
+
+    protected override void StartDialogue()
     {
-        
+        isDialogueActive = true;
+        dialogueIndex = 0;
+
+        nameText.SetText(dialogueData.npcName);
+
+        dialoguePanel.SetActive(true);
+        PauseController.SetPause(true);
+
+        StartCoroutine(TypeLine());
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NoInteraction()
     {
-        
+        //Display text saying "I will be waiting"
+        //End dialogue
+    }
+
+    public void YesInteraction()
+    {
+        //Display text saying "Good luck"
+        //End dialogue
+        //Fade in
+        //Glitch
+        //Switch scenes
+        //Fade out
     }
 }

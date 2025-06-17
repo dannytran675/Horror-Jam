@@ -17,7 +17,7 @@ public class NPC : MonoBehaviour, IInteractable
         return !isDialogueActive;
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
         if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-    protected void StartDialogue()
+    protected virtual void StartDialogue()
     {
         isDialogueActive = true;
         dialogueIndex = 0;
@@ -47,7 +47,7 @@ public class NPC : MonoBehaviour, IInteractable
         StartCoroutine(TypeLine());
     }
 
-    protected void NextLine()
+    protected virtual void NextLine()
     {
         if (isTyping)
         {
@@ -88,7 +88,7 @@ public class NPC : MonoBehaviour, IInteractable
         // }
     }
 
-    public void EndDialogue()
+    public virtual void EndDialogue()
     {
         //Stopping all 'threads' of text typing
         StopAllCoroutines();
