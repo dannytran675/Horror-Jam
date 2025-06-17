@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 2eff81f2c9895514c957b63327326926
+guid: e56c3fff8d447f941b42efc824ef794a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4366135031071119720
-    second: east_character-Sheet_0
+      213: 4001374566900922151
+    second: knight east-Sheet_0
   - first:
-      213: 371902045788497972
-    second: east_character-Sheet_1
+      213: 5632173310930647854
+    second: knight east-Sheet_1
   - first:
-      213: -3242076177768844045
-    second: east_character-Sheet_2
+      213: 3565414076136099219
+    second: knight east-Sheet_2
   - first:
-      213: -5846005813961437379
-    second: east_character-Sheet_3
-  - first:
-      213: 234535386926070507
-    second: east_character-Sheet_4
+      213: -7214692168789558629
+    second: knight east-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: east_character-Sheet_0
+      name: knight east-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 24
+        y: 15
+        width: 17
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86912609da0a79c30800000000000000
-      internalID: 4366135031071119720
+      spriteID: 7277969e7fcb78730800000000000000
+      internalID: 4001374566900922151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_1
+      name: knight east-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 88
+        y: 15
+        width: 17
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 438e672b0f2492500800000000000000
-      internalID: 371902045788497972
+      spriteID: e2bf47729cf792e40800000000000000
+      internalID: 5632173310930647854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_2
+      name: knight east-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 152
+        y: 15
+        width: 17
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f4f451c4e4d103d0800000000000000
-      internalID: -3242076177768844045
+      spriteID: 39d054d3635ea7130800000000000000
+      internalID: 3565414076136099219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: east_character-Sheet_3
+      name: knight east-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 216
+        y: 15
+        width: 17
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,30 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3fc5f78fa0dedea0800000000000000
-      internalID: -5846005813961437379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: east_character-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: beabcf811bc314300800000000000000
-      internalID: 234535386926070507
+      spriteID: b9a718392b340eb90800000000000000
+      internalID: -7214692168789558629
       vertices: []
       indices: 
       edges: []
@@ -238,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3f7868c018a317e4bbadaa851ef83714
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -246,15 +221,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      east_character-Sheet_0: 4366135031071119720
-      east_character-Sheet_1: 371902045788497972
-      east_character-Sheet_2: -3242076177768844045
-      east_character-Sheet_3: -5846005813961437379
-      east_character-Sheet_4: 234535386926070507
+      knight east-Sheet_0: 4001374566900922151
+      knight east-Sheet_1: 5632173310930647854
+      knight east-Sheet_2: 3565414076136099219
+      knight east-Sheet_3: -7214692168789558629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

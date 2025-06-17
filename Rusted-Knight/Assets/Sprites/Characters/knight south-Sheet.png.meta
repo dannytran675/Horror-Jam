@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: af76205048affd54ea21cb95efde39f3
+guid: 83038a5bb78853d4a9f62c34c425210b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4086819961098119102
-    second: knight_south-Sheet_0
+      213: -3710896640982274470
+    second: knight south-Sheet_0
   - first:
-      213: 6292311989711182975
-    second: knight_south-Sheet_1
+      213: 8815307204066480745
+    second: knight south-Sheet_1
   - first:
-      213: 7774200154505244732
-    second: knight_south-Sheet_2
+      213: -913873007873780968
+    second: knight south-Sheet_2
   - first:
-      213: -8418123358424196879
-    second: knight_south-Sheet_3
+      213: 1401294412627140103
+    second: knight south-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knight_south-Sheet_0
+      name: knight south-Sheet_0
       rect:
         serializedVersion: 2
         x: 23
-        y: 13
+        y: 15
         width: 18
-        height: 41
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb7aa3a0a1d47b830800000000000000
-      internalID: 4086819961098119102
+      spriteID: a5eaf0c8a2f308cc0800000000000000
+      internalID: -3710896640982274470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_south-Sheet_1
+      name: knight south-Sheet_1
       rect:
         serializedVersion: 2
         x: 87
-        y: 13
+        y: 15
         width: 18
-        height: 42
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7c9aa2aa68c25750800000000000000
-      internalID: 6292311989711182975
+      spriteID: 96213545233465a70800000000000000
+      internalID: 8815307204066480745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_south-Sheet_2
+      name: knight south-Sheet_2
       rect:
         serializedVersion: 2
         x: 151
-        y: 13
+        y: 15
         width: 18
-        height: 41
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c30721ed9d183eb60800000000000000
-      internalID: 7774200154505244732
+      spriteID: 8139ddb57554153f0800000000000000
+      internalID: -913873007873780968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_south-Sheet_3
+      name: knight south-Sheet_3
       rect:
         serializedVersion: 2
         x: 215
-        y: 13
+        y: 15
         width: 18
-        height: 42
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f815b91861dc2b80800000000000000
-      internalID: -8418123358424196879
+      spriteID: 70e516a08d5627310800000000000000
+      internalID: 1401294412627140103
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      knight_south-Sheet_0: 4086819961098119102
-      knight_south-Sheet_1: 6292311989711182975
-      knight_south-Sheet_2: 7774200154505244732
-      knight_south-Sheet_3: -8418123358424196879
+      knight south-Sheet_0: -3710896640982274470
+      knight south-Sheet_1: 8815307204066480745
+      knight south-Sheet_2: -913873007873780968
+      knight south-Sheet_3: 1401294412627140103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
