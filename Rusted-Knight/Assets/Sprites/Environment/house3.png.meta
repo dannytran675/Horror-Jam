@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1349cb01d4bf040459328a740dff22af
+guid: 67a2ff86c1dceb54ca6ee8c4442f93dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9020692128881831848
-    second: ChurchRoof 1_0
+      213: 7846822367210436989
+    second: house3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChurchRoof 1_0
+      name: house3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 42
-        width: 128
-        height: 102
+        y: 0
+        width: 96
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85016dd6d4010d280800000000000000
-      internalID: -9020692128881831848
+      spriteID: d79fa256e5385ec60800000000000000
+      internalID: 7846822367210436989
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChurchRoof 1_0: -9020692128881831848
+      house3_0: 7846822367210436989
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
