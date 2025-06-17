@@ -8,7 +8,8 @@ using System.Collections;
 public class GateInteraction : NPC
 {
     public NPCDialogue gateOpeningDialogue;
-    public bool gateOpenable, gateOpened, finalMessageDisplayed;
+    public bool gateOpenable, finalMessageDisplayed;
+    public static bool gateOpened;
     public GameObject answerObjects;
     public TMP_Text questionText;
     public GameObject dialogueObjects;
@@ -192,5 +193,6 @@ public class GateInteraction : NPC
         //Glitch
         //Switch scenes
         //Fade out
+        gateOpened = true;
     }
 }
