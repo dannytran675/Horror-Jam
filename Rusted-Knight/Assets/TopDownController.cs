@@ -11,7 +11,8 @@ public class TopDownController : MonoBehaviour
 
     public List<Sprite> upSprites;
     public List<Sprite> downSprites;
-    public List<Sprite> horizontalSprites;
+    public List<Sprite> rightSprites;
+    public List<Sprite> leftSprites;
 
     public float walkspeed;
     public float runningMultiplier;
@@ -48,7 +49,6 @@ public class TopDownController : MonoBehaviour
         {
             runningCommand();
             body.linearVelocity = direction * walkspeed;
-            HandleHorizontalFlip();
 
             List<Sprite> directionSprites = getDirectionSprites();
 
@@ -68,18 +68,6 @@ public class TopDownController : MonoBehaviour
 
     }
 
-    void HandleHorizontalFlip()
-    {
-        if (!spriteRend.flipX && direction.x < 0)
-        {
-            spriteRend.flipX = true;
-        }
-        else if (spriteRend.flipX && direction.x > 0)
-        {
-            spriteRend.flipX = false;
-        }
-    }
-
     List<Sprite> getDirectionSprites()
     {
 
@@ -87,19 +75,24 @@ public class TopDownController : MonoBehaviour
 
         bool movingUp = direction.y > 0;
         bool movingDown = direction.y < 0;
-        bool horizontalMovement = Mathf.Abs(direction.x) > 0;
+        bool movingRight = direction.x > 0;
+        bool movingLeft = direction.x < 0;
 
-        if (horizontalMovement)
-        {
-            directionSprite = horizontalSprites;
-        }
-        else if (movingUp)
+        if (movingUp)
         {
             directionSprite = upSprites;
         }
         else if (movingDown)
         {
             directionSprite = downSprites;
+        }
+        else if (movingRight)
+        {
+            directionSprite = rightSprites;
+        }
+        else if (movingLeft)
+        {
+            directionSprite = leftSprites;
         }
 
         return directionSprite;
