@@ -3015,6 +3015,7 @@ MonoBehaviour:
   - {fileID: 4366135031071119720, guid: 2eff81f2c9895514c957b63327326926, type: 3}
   - {fileID: -3242076177768844045, guid: 2eff81f2c9895514c957b63327326926, type: 3}
   walkspeed: 4
+  runningMultiplier: 2
   framerate: 5
 --- !u!61 &1752262160
 BoxCollider2D:

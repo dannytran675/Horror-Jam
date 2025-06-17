@@ -14,6 +14,7 @@ public class TopDownController : MonoBehaviour
     public List<Sprite> horizontalSprites;
 
     public float walkspeed;
+    public float runningMultiplier;
     public float framerate;
 
     float idleTime;
@@ -45,19 +46,22 @@ public class TopDownController : MonoBehaviour
         }
         else
         {
+            runningCommand();
             body.linearVelocity = direction * walkspeed;
             HandleHorizontalFlip();
 
             List<Sprite> directionSprites = getDirectionSprites();
 
-            if (directionSprites != null) {
+            if (directionSprites != null)
+            {
                 float walkDuration = Time.time - idleTime;
 
                 int frame = (int)((walkDuration * framerate) % directionSprites.Count);
 
                 spriteRend.sprite = directionSprites[frame];
             }
-            else {
+            else
+            {
                 idleTime = Time.time;
             }
         }
@@ -99,6 +103,20 @@ public class TopDownController : MonoBehaviour
         }
 
         return directionSprite;
+    }
+
+    void runningCommand()
+    {
+        if (Input.GetKeyDown("left shift"))
+        {
+            walkspeed *= runningMultiplier;
+            framerate *= runningMultiplier;
+        }
+        else if (Input.GetKeyUp("left shift"))
+        {
+            walkspeed /= runningMultiplier;
+            framerate /= runningMultiplier;
+        }
     }
 
 }
