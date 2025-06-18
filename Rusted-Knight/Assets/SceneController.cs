@@ -24,20 +24,32 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    
+
     public void NextScene()
     {
-        StartCoroutine(LoadScene());
+        LoadScene();
     }
 
     //Loads next scene in the build profile (File>Build Profiles)
-    public IEnumerator LoadScene()
+    public void LoadScene()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(FadeOut());
+    }
+
+    public IEnumerator FadeIn()
     {
         SceneTransition.SetActive(true);
         transitionAnim.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneTransition.SetActive(false);
+    }
+
+    public IEnumerator FadeOut()
+    {
+        SceneTransition.SetActive(true);
         transitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1);
         SceneTransition.SetActive(false);
     }
 }

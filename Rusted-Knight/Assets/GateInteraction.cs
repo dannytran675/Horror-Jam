@@ -166,6 +166,7 @@ public class GateInteraction : NPC
         }
         else
         {
+            StartCoroutine(SceneController.instance.FadeIn());
             gateOpened = true;
         }
         finalMessageDisplayed = false;
