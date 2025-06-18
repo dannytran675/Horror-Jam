@@ -167,11 +167,18 @@ public class GateInteraction : NPC
         else
         {
             GameManager.Instance.FadeInSceneTransition();
-            yield return new WaitForSeconds(2.3f);
-            gateOpened = true;
+            StartCoroutine(gateOpeningDelay(2.2f));
         }
         finalMessageDisplayed = false;
 
+    }
+
+    IEnumerator gateOpeningDelay(float delay)
+    {
+        Debug.Log(gateOpened);
+        yield return new WaitForSeconds(delay);
+        gateOpened = true;
+        Debug.Log(gateOpened);
     }
 
 
