@@ -474,12 +474,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124498286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03bafe34f542f1e4aa77f3a54808861a, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd2b9b71e9c0d848a1d8a7144956588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 1000
   fam: 0
-  crit: 0
+  crit: 0.125
 --- !u!1 &1145899531
 GameObject:
   m_ObjectHideFlags: 0
