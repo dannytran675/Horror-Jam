@@ -14,7 +14,6 @@ public class NPC : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        Debug.Log(isDialogueActive);
         return !isDialogueActive;
     }
 
@@ -43,10 +42,8 @@ public class NPC : MonoBehaviour, IInteractable
         nameText.SetText(dialogueData.npcName);
 
         dialoguePanel.SetActive(true);
-        Debug.Log(gameObject.transform);
         if (gameObject.transform.CompareTag("Interactable"))
         {
-            Debug.Log("WOW");
             DialogueHelper.ShowOnlyDialogue();
         }
         PauseController.SetPause(true);
