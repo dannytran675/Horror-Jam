@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections.Generic;
+using System.Collections;
 public class SceneController : MonoBehaviour
 {
 
     public static SceneController instance;
-
+    public GameObject SceneTransition;
+    [SerializeField] Animator transitionAnim;
     //Upon game loading, SceneController creates and instance of itself so it can run the methods
     public void Awake()
     {
@@ -22,15 +24,20 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    //Loads next scene in the build profile (File>Build Profiles)
+    
     public void NextScene()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadScene());
     }
 
-    //Loads scene by scene name
-    public void LoadScene(string sceneName)
+    //Loads next scene in the build profile (File>Build Profiles)
+    public IEnumerator LoadScene()
     {
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneTransition.SetActive(true);
+        transitionAnim.SetTrigger("FadeIn");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        transitionAnim.SetTrigger("FadeOut");
+        SceneTransition.SetActive(false);
     }
 }
