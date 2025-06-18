@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 
-public class PlayVideo : GateInteraction
+public class PlayVideo : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public VideoClip videoClip;
@@ -51,7 +51,7 @@ public class PlayVideo : GateInteraction
     {
         isPlaying = videoPlayer.isPlaying;
         // Play video when Enter is pressed
-        if (!isPlaying && gateOpened)
+        if (!isPlaying && GateInteraction.gateOpened)
         {
             if (videoPlayer != null)
             {

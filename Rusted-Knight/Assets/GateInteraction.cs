@@ -10,9 +10,7 @@ public class GateInteraction : NPC
     public NPCDialogue gateOpeningDialogue;
     public bool gateOpenable, finalMessageDisplayed;
     public static bool gateOpened;
-    public GameObject answerObjects;
     public TMP_Text questionText;
-    public GameObject dialogueObjects;
     public GameObject answerButtons;
 
     public override void Interact()
@@ -44,8 +42,7 @@ public class GateInteraction : NPC
         if (gateOpenable)
         {
             //Switch to display the yes/no options
-            answerObjects.SetActive(true);
-            dialogueObjects.SetActive(false);
+            DialogueHelper.ShowOnlyQuestion();
         }
 
         StartCoroutine(TypeLine());
@@ -167,7 +164,12 @@ public class GateInteraction : NPC
             //Bringing back the answer buttons for when you want to answer again
             answerButtons.SetActive(true);
         }
+        else
+        {
+            gateOpened = true;
+        }
         finalMessageDisplayed = false;
+
     }
 
 
@@ -193,6 +195,5 @@ public class GateInteraction : NPC
         //Glitch
         //Switch scenes
         //Fade out
-        gateOpened = true;
     }
 }

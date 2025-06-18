@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 227444557}
   m_Layer: 0
   m_Name: DoorInteraction (1)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,6 +739,52 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7416643, y: 1.4344864}
   m_EdgeRadius: 0
+--- !u!1 &228333149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228333151}
+  - component: {fileID: 228333150}
+  m_Layer: 0
+  m_Name: DialogueHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &228333150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228333149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425d30221b1395446abf2ce64fc08c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObjects: {fileID: 751228811}
+  answerObjects: {fileID: 71692591}
+--- !u!4 &228333151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228333149}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.39748, y: -1.52663, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &230964931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1202,7 @@ GameObject:
   - component: {fileID: 432624359}
   m_Layer: 0
   m_Name: Strange Villager
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1306,7 +1352,7 @@ GameObject:
   - component: {fileID: 495261438}
   m_Layer: 0
   m_Name: FlowerInteraction
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1530,7 +1576,7 @@ GameObject:
   - component: {fileID: 552488457}
   m_Layer: 0
   m_Name: TownMayor
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1680,7 +1726,7 @@ GameObject:
   - component: {fileID: 555982696}
   m_Layer: 0
   m_Name: DoorInteraction
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2616,7 +2662,7 @@ GameObject:
   - component: {fileID: 917519281}
   m_Layer: 0
   m_Name: Classic Villager
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3055,45 +3101,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917519281}
+      - m_Target: {fileID: 1846737442}
         m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: EndDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 552488457}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: EndDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 970009026}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: EndDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 432624359}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: EndDialogue
+        m_MethodName: EndAllDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3155,7 +3165,7 @@ GameObject:
   - component: {fileID: 970009026}
   m_Layer: 0
   m_Name: MilkMan
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4320,7 +4330,7 @@ GameObject:
   - component: {fileID: 1433912310}
   m_Layer: 0
   m_Name: GateInteraction
-  m_TagString: Untagged
+  m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4403,8 +4413,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1257266568}
   nameText: {fileID: 769035313}
   gateOpeningDialogue: {fileID: 11400000, guid: ead4927b33e3ba54d881427cb922c27a, type: 2}
-  gateOpenable: 0
-  gateOpened: 0
+  gateOpenable: 1
   finalMessageDisplayed: 0
   answerObjects: {fileID: 71692591}
   questionText: {fileID: 1200287812}
@@ -4735,7 +4744,7 @@ GameObject:
   - component: {fileID: 1580953164}
   m_Layer: 0
   m_Name: DoorInteraction
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5211,7 +5220,7 @@ GameObject:
   - component: {fileID: 1846737442}
   m_Layer: 0
   m_Name: DoorInteraction
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5378,7 +5387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c611a59a6888a4289206ac9baa52eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
+  videoPlayer: {fileID: 1866270593}
   videoClip: {fileID: 0}
 --- !u!1 &2040157821
 GameObject:
@@ -17727,3 +17736,4 @@ SceneRoots:
   - {fileID: 574910824}
   - {fileID: 1219676277}
   - {fileID: 199346331}
+  - {fileID: 228333151}

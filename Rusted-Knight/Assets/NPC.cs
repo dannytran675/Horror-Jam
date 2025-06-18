@@ -10,10 +10,11 @@ public class NPC : MonoBehaviour, IInteractable
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
     protected int dialogueIndex;
-    protected bool isTyping, isDialogueActive;
+    protected static bool isTyping, isDialogueActive;
 
     public bool CanInteract()
     {
+        Debug.Log(isDialogueActive);
         return !isDialogueActive;
     }
 
@@ -42,6 +43,12 @@ public class NPC : MonoBehaviour, IInteractable
         nameText.SetText(dialogueData.npcName);
 
         dialoguePanel.SetActive(true);
+        Debug.Log(gameObject.transform);
+        if (gameObject.transform.CompareTag("Interactable"))
+        {
+            Debug.Log("WOW");
+            DialogueHelper.ShowOnlyDialogue();
+        }
         PauseController.SetPause(true);
 
         StartCoroutine(TypeLine());
@@ -101,5 +108,21 @@ public class NPC : MonoBehaviour, IInteractable
         dialoguePanel.SetActive(false);
         //Unpauses game
         PauseController.SetPause(false);
+    }
+
+    public void EndAllDialogue()
+    {
+        GameObject[] allInteractables = GameObject.FindGameObjectsWithTag("Interactable");
+
+        foreach (GameObject interactable in allInteractables)
+        {
+            NPC controller = interactable.GetComponent<NPC>();
+            if (controller != null)
+            {
+                controller.StopAllCoroutines();
+            }
+
+        }
+        EndDialogue();
     }
 }
