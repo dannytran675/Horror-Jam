@@ -2138,6 +2138,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639838016}
   m_CullTransparentMesh: 1
+--- !u!1 &644654711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644654713}
+  - component: {fileID: 644654712}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &644654712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644654711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfc342201845ef4190ab66c60a62382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &644654713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644654711}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.39748, y: -1.52663, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &651492201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,9 +4459,7 @@ MonoBehaviour:
   gateOpeningDialogue: {fileID: 11400000, guid: ead4927b33e3ba54d881427cb922c27a, type: 2}
   gateOpenable: 1
   finalMessageDisplayed: 0
-  answerObjects: {fileID: 71692591}
   questionText: {fileID: 1200287812}
-  dialogueObjects: {fileID: 751228811}
   answerButtons: {fileID: 267052336}
 --- !u!1 &1508156090
 GameObject:
@@ -17737,3 +17779,4 @@ SceneRoots:
   - {fileID: 1219676277}
   - {fileID: 199346331}
   - {fileID: 228333151}
+  - {fileID: 644654713}
