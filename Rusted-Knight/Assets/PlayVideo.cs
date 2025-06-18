@@ -31,7 +31,7 @@ public class PlayVideo : MonoBehaviour
         // Do whatever you want when video ends
         HideAllParents(); //hides the gameObject the video is attached to
         OnDestroy();
-        GameManager.Instance.FadeOutSceneTransition();
+        SceneController.instance.NextScene();
     }
 
     void HideAllParents()

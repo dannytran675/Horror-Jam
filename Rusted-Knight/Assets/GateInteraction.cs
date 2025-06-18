@@ -166,8 +166,7 @@ public class GateInteraction : NPC
         }
         else
         {
-            GameManager.Instance.FadeInSceneTransition();
-            yield return new WaitForSeconds(2.3f);
+            StartCoroutine(SceneController.instance.FadeIn());
             gateOpened = true;
         }
         finalMessageDisplayed = false;
