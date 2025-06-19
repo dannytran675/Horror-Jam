@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public static bool isFading;
     [SerializeField] private GameObject _fadeInSceneTransition;
     [SerializeField] private GameObject _fadeOutSceneTransition;
 
@@ -30,23 +32,27 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         _fadeInSceneTransition.SetActive(false);
+        isFading = false;
     }
 
     public IEnumerator DisableFadeOutSceneTransition(float time)
     {
         yield return new WaitForSeconds(time);
         _fadeOutSceneTransition.SetActive(false);
+        isFading = false;
     }
 
     public void FadeInSceneTransition()
     {
         _fadeInSceneTransition.SetActive(true);
+        isFading = true;
         StartCoroutine(DisableFadeInSceneTransition(2.3f));
     }
 
     public void FadeOutSceneTransition()
     {
         _fadeOutSceneTransition.SetActive(true);
+        isFading = true;
         StartCoroutine(DisableFadeOutSceneTransition(2.3f));
     }
 
