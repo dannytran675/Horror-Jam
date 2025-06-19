@@ -4417,7 +4417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1407192840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4425,7 +4425,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407192839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5358,8 +5358,10 @@ MonoBehaviour:
   - {fileID: -5770819839408557141, guid: 7005dd562ea925b4d95b8d99bb81cbde, type: 3}
   - {fileID: 6891935093433811465, guid: 7005dd562ea925b4d95b8d99bb81cbde, type: 3}
   walkspeed: 4
+  orignalWalkspeed: 0
   runningMultiplier: 2
   framerate: 5
+  orignialFramerate: 0
 --- !u!61 &1752262160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5733,6 +5735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1866270593}
   videoClip: {fileID: 0}
+  screen: {fileID: 1407192839}
 --- !u!1 &2040157821
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ public class StartingDialogue : NPC
 {
     bool sceneChange;
     bool dialogueFinished;
+    bool firstDialogue;
     void Update()
     {
         if (isInteractKey())
@@ -20,17 +21,19 @@ public class StartingDialogue : NPC
 
     void Start()
     {
+        firstDialogue = true;
         Interact();
     }
     public override void Interact()
     {
-        if (dialogueFinished || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        if ((GameManager.isFading && !firstDialogue)|| dialogueFinished || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
         }
 
         if (isDialogueActive)
         {
+            firstDialogue = false;
             NextLine();
         }
         else

@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public virtual void Interact()
     {
-        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        if (GameManager.isFading || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
         }

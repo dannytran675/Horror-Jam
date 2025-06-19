@@ -9,9 +9,11 @@ public class PlayVideo : MonoBehaviour
     public VideoClip videoClip;
     // Check if video is currently playing
     bool isPlaying;
+    public GameObject screen;
 
     void Start()
     {
+        screen.SetActive(false);
         // Get VideoPlayer component if not assigned
         if (videoPlayer == null)
             videoPlayer = GetComponent<VideoPlayer>();
@@ -58,10 +60,16 @@ public class PlayVideo : MonoBehaviour
         {
             if (videoPlayer != null)
             {
-                videoPlayer.Play();
-                Debug.Log("Video playing!");
+                playVideo();
             }
         }
+    }
+
+    void playVideo()
+    {
+        screen.SetActive(true);
+        videoPlayer.Play();
+        Debug.Log("Video playing!");
     }
     
 
@@ -69,6 +77,7 @@ public class PlayVideo : MonoBehaviour
     {
         // Always unsubscribe to prevent memory leaks
         videoPlayer.loopPointReached -= OnVideoFinished;
+        screen.SetActive(false);
         Debug.Log("Unsubscribed!");
     }
 

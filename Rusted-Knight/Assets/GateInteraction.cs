@@ -15,7 +15,7 @@ public class GateInteraction : NPC
 
     public override void Interact()
     {
-        if (finalMessageDisplayed || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        if (GameManager.isFading || finalMessageDisplayed || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
         }
