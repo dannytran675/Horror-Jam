@@ -33,7 +33,6 @@ public class StartingDialogue : NPC
 
         if (isDialogueActive)
         {
-            firstDialogue = false;
             NextLine();
         }
         else
@@ -41,12 +40,31 @@ public class StartingDialogue : NPC
             StartDialogue();
         }
     }
+
+    protected override void StartDialogue()
+    {
+        firstDialogue = false;
+        isDialogueActive = true;
+        dialogueIndex = 0;
+
+        nameText.SetText(dialogueData.npcName);
+
+        dialoguePanel.SetActive(true);
+        if (gameObject.transform.CompareTag("Interactable"))
+        {
+            DialogueHelper.ShowOnlyDialogue();
+        }
+        PauseController.SetPause(true);
+
+        StartCoroutine(TypeLine());
+    }
     bool isInteractKey()
     {
         bool isInteractKey = Input.GetKeyUp("return") || Input.GetKeyUp("space");
         isInteractKey = isInteractKey || Input.GetKeyUp("e") || Input.GetKeyUp("z");
         return isInteractKey;
     }
+    
 
     public override void EndDialogue()
     {
