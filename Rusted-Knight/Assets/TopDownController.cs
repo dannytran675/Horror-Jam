@@ -15,15 +15,18 @@ public class TopDownController : MonoBehaviour
     public List<Sprite> leftSprites;
 
     public float walkspeed;
+    public float orignalWalkspeed;
     public float runningMultiplier;
     public float framerate;
+    public float orignialFramerate;
 
     float idleTime;
     Vector2 direction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        orignalWalkspeed = walkspeed;
+        orignialFramerate = framerate;
     }
 
     // Update is called once per frame
@@ -102,13 +105,13 @@ public class TopDownController : MonoBehaviour
     {
         if (Input.GetKeyDown("left shift"))
         {
-            walkspeed *= runningMultiplier;
-            framerate *= runningMultiplier;
+            walkspeed = orignalWalkspeed * runningMultiplier;
+            framerate = orignialFramerate * runningMultiplier;
         }
         else if (Input.GetKeyUp("left shift"))
         {
-            walkspeed /= runningMultiplier;
-            framerate /= runningMultiplier;
+            walkspeed = orignalWalkspeed;
+            framerate = orignialFramerate;
         }
     }
 

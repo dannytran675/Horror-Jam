@@ -163,13 +163,15 @@ public class GateInteraction : NPC
         {
             //Bringing back the answer buttons for when you want to answer again
             answerButtons.SetActive(true);
+            finalMessageDisplayed = false;
         }
         else
         {
+            finalMessageDisplayed = true;
             GameManager.Instance.FadeInSceneTransition();
             StartCoroutine(gateOpeningDelay(2.2f));
+
         }
-        finalMessageDisplayed = false;
 
     }
 
