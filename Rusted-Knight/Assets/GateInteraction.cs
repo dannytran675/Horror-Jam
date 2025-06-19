@@ -163,15 +163,24 @@ public class GateInteraction : NPC
         {
             //Bringing back the answer buttons for when you want to answer again
             answerButtons.SetActive(true);
+            finalMessageDisplayed = false;
         }
         else
         {
+            finalMessageDisplayed = true;
             GameManager.Instance.FadeInSceneTransition();
-            yield return new WaitForSeconds(2.3f);
-            gateOpened = true;
-        }
-        finalMessageDisplayed = false;
+            StartCoroutine(gateOpeningDelay(2.2f));
 
+        }
+
+    }
+
+    IEnumerator gateOpeningDelay(float delay)
+    {
+        Debug.Log(gateOpened);
+        yield return new WaitForSeconds(delay);
+        gateOpened = true;
+        Debug.Log(gateOpened);
     }
 
 

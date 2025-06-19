@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.Video;
+using System.Collections;
 
 public class PlayVideo : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayVideo : MonoBehaviour
         // Do whatever you want when video ends
         HideAllParents(); //hides the gameObject the video is attached to
         OnDestroy();
+        GameManager.Instance.LoadScene();
         GameManager.Instance.FadeOutSceneTransition();
     }
 
@@ -61,6 +63,7 @@ public class PlayVideo : MonoBehaviour
             }
         }
     }
+    
 
     void OnDestroy()
     {
