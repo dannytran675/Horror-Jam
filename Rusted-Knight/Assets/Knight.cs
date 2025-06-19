@@ -15,8 +15,7 @@ public class Knight : CharacterInfo
     {
         if (move2CD == 0)
         {
-            rnd = Random.Range(0f, 1f);
-            if (rnd > crit)
+            if (ifCrit)
             {
                 character.hp -= 65;
             }
@@ -33,8 +32,7 @@ public class Knight : CharacterInfo
     {
         if (move3CD == 0)
         {
-            rnd = Random.Range(0f, 1f);
-            if (rnd > crit)
+            if (ifCrit)
             {
                 character.hp -= 200;
             }

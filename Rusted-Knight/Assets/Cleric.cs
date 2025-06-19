@@ -13,22 +13,38 @@ public class Cleric : CharacterInfo
                 character.hp = character.maxHP;
             }
             usedMove = true;
+            belief -= 25;
         }
     }
-    public override void move2(CharacterInfo character) //attack
+    public override void move2(CharacterInfo character) //ray
     {
         if (belief >= 10)
         {
-
+            if (ifCrit)
+            {
+                character.hp -= 300;
+            }
+            else
+            {
+                character.hp -= 150;
+            }
+            usedMove = true;
+            belief -= 10;
         }
     }
 
-    public override void move3(CharacterInfo character) //slice
+    public override void move3(CharacterInfo character) //revive
     {
         if (belief >= 65)
         {
-
+            if (character.hp <= 0)
+            {
+                character.downed = false;
+                character.hp += character.maxHP * 0.3;
+            }
+            belief -= 65;
         }
+        usedMove = true;
     }
 
 }

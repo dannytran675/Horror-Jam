@@ -5,7 +5,7 @@ public class CharacterInfo : MonoBehaviour
     public double maxHP, hp;
     public int fam;
     public float crit, rnd;
-    public bool guarded, usedMove;
+    public bool guarded, usedMove, downed;
 
     public virtual void move1(CharacterInfo character)
     {
@@ -35,5 +35,15 @@ public class CharacterInfo : MonoBehaviour
     public void addFam()
     {
         fam++;
+    }
+
+    public bool ifCrit()
+    {
+        rnd = Random.Range(0f, 1f);
+        if (rnd > crit)
+        {
+            return false;
+        }
+        return true;
     }
 }
