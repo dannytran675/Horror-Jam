@@ -477,9 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd2b9b71e9c0d848a1d8a7144956588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 1000
   hp: 1000
   fam: 0
   crit: 0.125
+  rnd: 0
+  guarded: 0
+  usedMove: 0
+  move1CD: 0
+  move2CD: 1
+  move3CD: 3
 --- !u!1 &1145899531
 GameObject:
   m_ObjectHideFlags: 0

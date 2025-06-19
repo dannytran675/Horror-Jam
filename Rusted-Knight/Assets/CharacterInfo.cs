@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CharacterInfo : MonoBehaviour
 {
-    public int hp, fam;
+    public double maxHP, hp;
+    public int fam;
     public float crit, rnd;
     public bool guarded, usedMove;
 
