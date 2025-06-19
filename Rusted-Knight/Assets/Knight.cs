@@ -15,7 +15,7 @@ public class Knight : CharacterInfo
     {
         if (move2CD == 0)
         {
-            if (ifCrit)
+            if (ifCrit())
             {
                 character.hp -= 65;
             }
@@ -32,7 +32,7 @@ public class Knight : CharacterInfo
     {
         if (move3CD == 0)
         {
-            if (ifCrit)
+            if (ifCrit())
             {
                 character.hp -= 200;
             }

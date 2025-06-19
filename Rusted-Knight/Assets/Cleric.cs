@@ -20,7 +20,7 @@ public class Cleric : CharacterInfo
     {
         if (belief >= 10)
         {
-            if (ifCrit)
+            if (ifCrit())
             {
                 character.hp -= 300;
             }
