@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8858d5c92e9d2914bb34eaa6b8cfb6a3, type: 3}
+  m_Name: DenaFlontInteraction
+  m_EditorClassIdentifier: 
+  npcName: Dena
+  npcPortrait: {fileID: 0}
+  dialogueLines:
+  - 'Did you hear that!?  '
+  - 'All you need to do is defeat the Demon King, and you can return home! '
+  - And lucky for you, you have me!
+  - With the power of the holy spirit by my side, defeating the Demon King will be
+    easy!
+  - D-Dena, are you leaving the village?
+  - "Flont! Yup, I\u2019m going to accompany this knight here on his journey to kill
+    the demon king!"
+  - "I- I\u2019ll come with-"
+  - you.
+  - "No, you won\u2019t! We\u2019re going to be battling many dangerous monsters,
+    and you\u2019re terrified of blood! "
+  - "I, I don\u2019t care."
+  - "Even if you don\u2019t take me with you, I\u2019ll just sneak out and follow
+    behind!"
+  - "Hmm\u2026 That\u2019ll be even more dangerous for you\u2026"
+  - 'Fine! But only if you listen to us at all times! '
+  - Y-yes!
+  typingSpeed: 0.05
+  voiceSound: {fileID: 0}
+  voicePitch: 1

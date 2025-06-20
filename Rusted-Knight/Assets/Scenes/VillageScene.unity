@@ -873,7 +873,7 @@ Transform:
   m_GameObject: {fileID: 230964931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.49061978, y: -0.003979683, z: -10}
+  m_LocalPosition: {x: 0.52062, y: 0.6660204, z: -10}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 352913432}
   - component: {fileID: 352913435}
   - component: {fileID: 352913434}
-  - component: {fileID: 352913433}
+  - component: {fileID: 352913436}
   m_Layer: 0
   m_Name: Dena
   m_TagString: Interactable
@@ -1026,22 +1026,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 810330632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &352913433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352913431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc3edf248de647846a5f9051fd2d9729, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: a8659da52bbd87947b09f0d1e18af6f6, type: 2}
-  dialoguePanel: {fileID: 1508156090}
-  dialogueText: {fileID: 1257266568}
-  nameText: {fileID: 769035313}
 --- !u!61 &352913434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1143,6 +1127,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &352913436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352913431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e47cbe260d46c44a94afac7ef01406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: a8659da52bbd87947b09f0d1e18af6f6, type: 2}
+  dialoguePanel: {fileID: 1508156090}
+  dialogueText: {fileID: 1257266568}
+  nameText: {fileID: 769035313}
+  mayorFirst: {fileID: 11400000, guid: bfccda7f3313b1d48bc16eb4538dd5b7, type: 2}
+  denaFlontInteraction: {fileID: 11400000, guid: 4cb2837321e745847a625027c4e8bbf4, type: 2}
+  dialogueFinished: 0
+  mayorDialogue: 0
+  denaFlontDialogue: 0
+  xOffset: 2.82031
+  yOffset: -5.09192
 --- !u!1 &389036479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,7 +1694,7 @@ Transform:
   m_GameObject: {fileID: 549714393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.49062002, y: -0.003979683, z: -10}
+  m_LocalPosition: {x: 0.52062, y: 0.6660204, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1724,7 +1731,7 @@ GameObject:
   - component: {fileID: 552488456}
   - component: {fileID: 552488459}
   - component: {fileID: 552488458}
-  - component: {fileID: 552488457}
+  - component: {fileID: 552488460}
   m_Layer: 0
   m_Name: TownMayor
   m_TagString: Interactable
@@ -1747,22 +1754,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 810330632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &552488457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552488455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc3edf248de647846a5f9051fd2d9729, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 0c2c9b2c3322c6f4ebb37657cf8ba0d1, type: 2}
-  dialoguePanel: {fileID: 1508156090}
-  dialogueText: {fileID: 1257266568}
-  nameText: {fileID: 769035313}
 --- !u!61 &552488458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1864,6 +1855,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &552488460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552488455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13931aa61f9c1d4789e4c64a8b19e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 0c2c9b2c3322c6f4ebb37657cf8ba0d1, type: 2}
+  dialoguePanel: {fileID: 1508156090}
+  dialogueText: {fileID: 1257266568}
+  nameText: {fileID: 769035313}
+  dialogueFinished: 0
 --- !u!1 &555982694
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,7 +4816,6 @@ MonoBehaviour:
   dialogueText: {fileID: 1257266568}
   nameText: {fileID: 769035313}
   gateOpeningDialogue: {fileID: 11400000, guid: ead4927b33e3ba54d881427cb922c27a, type: 2}
-  gateOpenable: 1
   finalMessageDisplayed: 0
   questionText: {fileID: 1200287812}
   answerButtons: {fileID: 267052336}
@@ -5467,7 +5474,7 @@ Transform:
   m_GameObject: {fileID: 1752262155}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24, y: -8.71, z: 0}
+  m_LocalPosition: {x: 0.27, y: -8.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -18217,7 +18224,7 @@ Transform:
   m_GameObject: {fileID: 2064703806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.49061978, y: -0.003979683, z: -10}
+  m_LocalPosition: {x: 0.52062, y: 0.6660204, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
