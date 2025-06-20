@@ -8,8 +8,8 @@ using System.Collections;
 public class GateInteraction : NPC
 {
     public NPCDialogue gateOpeningDialogue;
-    public bool gateOpenable, finalMessageDisplayed;
-    public static bool gateOpened;
+    public bool finalMessageDisplayed;
+    public static bool gateOpened, gateOpenable;
     public TMP_Text questionText;
     public GameObject answerButtons;
 
