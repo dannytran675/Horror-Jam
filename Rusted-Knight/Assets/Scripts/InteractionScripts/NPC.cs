@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour, IInteractable
     protected int dialogueIndex;
     protected static bool isTyping, isDialogueActive;
 
-    public bool CanInteract()
+    public virtual bool CanInteract()
     {
         return !isDialogueActive;
     }

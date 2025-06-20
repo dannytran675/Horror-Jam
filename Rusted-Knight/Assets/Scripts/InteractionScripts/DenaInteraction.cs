@@ -5,8 +5,20 @@ public class DenaInteraction : NPC
 {
     public NPCDialogue mayorFirst;
     public NPCDialogue denaFlontInteraction;
-    public bool dialogueFinished, mayorDialogue, denaFlontDialogue;
+    public GameObject exitButton;
+    public bool startInteract, dialogueFinished, mayorDialogue, denaFlontDialogue;
     public float xOffset = 2.82031f, yOffset = -5.09192f;
+
+    public override bool CanInteract()
+    {
+        return startInteract || !isDialogueActive;
+    }
+    public void Start()
+    {
+        exitButton.SetActive(false);
+        startInteract = true;
+        Interact();
+    }
 
     public IEnumerator Teleport()
     {
@@ -17,13 +29,9 @@ public class DenaInteraction : NPC
         GameManager.Instance.FadeOutSceneTransition();
         dialogueFinished = false;
     }
-
-    // public void Start()
-    // {
-    //     StartDialogue();
-    // }
     public override void Interact()
     {
+        Debug.Log("Interacting");
         if (dialogueFinished || GameManager.isFading || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
@@ -55,7 +63,9 @@ public class DenaInteraction : NPC
         }
         else
         {
+            startInteract = false;
             EndDialogue();
+            exitButton.SetActive(true);
             if (!mayorDialogue)
             {
                 dialogueFinished = true;

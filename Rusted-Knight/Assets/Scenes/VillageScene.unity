@@ -1145,6 +1145,8 @@ MonoBehaviour:
   nameText: {fileID: 769035313}
   mayorFirst: {fileID: 11400000, guid: bfccda7f3313b1d48bc16eb4538dd5b7, type: 2}
   denaFlontInteraction: {fileID: 11400000, guid: 4cb2837321e745847a625027c4e8bbf4, type: 2}
+  exitButton: {fileID: 968697225}
+  startInteract: 0
   dialogueFinished: 0
   mayorDialogue: 0
   denaFlontDialogue: 0
@@ -1514,7 +1516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &495261437
 Transform:
   m_ObjectHideFlags: 0
@@ -1748,7 +1750,7 @@ Transform:
   m_GameObject: {fileID: 552488455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.87, y: -1.13, z: 0}
+  m_LocalPosition: {x: 15.87, y: -2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3617,7 +3619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149641935}
   - component: {fileID: 1149641936}
-  - component: {fileID: 1149641937}
+  - component: {fileID: 1149641938}
   m_Layer: 0
   m_Name: InteractionDetector
   m_TagString: Untagged
@@ -3652,8 +3654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33cc16858750aa4b9e5e9fed8f09460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1149641937
-CircleCollider2D:
+--- !u!70 &1149641938
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3686,8 +3688,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03, y: 0}
-  m_Radius: 1.0529438
+  m_Offset: {x: 0.000000059604645, y: -0.08666158}
+  m_Size: {x: 1.1932915, y: 2.312303}
+  m_Direction: 0
 --- !u!1 &1200287810
 GameObject:
   m_ObjectHideFlags: 0

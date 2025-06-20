@@ -35,7 +35,8 @@ public class InteractionControl : MonoBehaviour
         return isInteractKey;
     }
 
-    bool interactionPossible() {
+    bool interactionPossible()
+    {
         return (interactableInRange != null);
     }
 }
