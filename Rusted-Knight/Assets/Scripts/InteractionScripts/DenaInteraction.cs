@@ -32,7 +32,7 @@ public class DenaInteraction : NPC
     public override void Interact()
     {
         Debug.Log("Interacting");
-        if (dialogueFinished || GameManager.isFading || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        if (dialogueFinished || (GameManager.isFading && !startInteract) || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
         }
