@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class DenaInteraction : NPC
 {
-    public NPCDialogue mayorFirst;
-    //public NPCDialogue denaFlontInteraction;
-    public GameObject exitButton;
+    public NPCDialogue mayorFirst, denaFlontInteraction;
+    public GameObject exitButton, flont;
     public bool startInteract, dialogueFinished, mayorDialogue;
     public float xOffset = 2.82031f, yOffset = -5.09192f;
 
@@ -29,8 +28,22 @@ public class DenaInteraction : NPC
         GameManager.Instance.FadeOutSceneTransition();
         dialogueFinished = false;
     }
+
+    public IEnumerator FlontAppearance()
+    {
+        GameManager.Instance.FadeInSceneTransition();
+        yield return new WaitForSeconds(2.3f);
+        //Flont Appearing
+        flont.SetActive(true);
+        GameManager.Instance.FadeOutSceneTransition();
+    }
     public override void Interact()
     {
+        if (MayorInteraction.doneMayorInteraction && dialogueData == mayorFirst)
+        {
+            dialogueData = denaFlontInteraction;
+            exitButton.SetActive(false);
+        }
         if (dialogueFinished || (GameManager.isFading && !startInteract) || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;
@@ -38,6 +51,7 @@ public class DenaInteraction : NPC
 
         if (isDialogueActive)
         {
+            CheckName();
             NextLine();
         }
         else
@@ -69,9 +83,47 @@ public class DenaInteraction : NPC
             {
                 dialogueFinished = true;
                 StartCoroutine(Teleport());
+                dialogueData = mayorFirst;
+                mayorDialogue = true;
             }
-            dialogueData = mayorFirst;
-            mayorDialogue = true;
+            if (dialogueData == denaFlontInteraction)
+            {
+                dialogueFinished = true;
+                GateInteraction.gateOpenable = true;
+                exitButton.SetActive(true);
+            }
+        }
+    }
+
+    public void CheckName()
+    {
+        if (!isTyping)
+        {
+            switch (dialogueData.dialogueLines[dialogueIndex])
+            {
+                case "With the power of the holy spirit by my side, defeating the Demon King will be easy!":
+                    StartCoroutine(FlontAppearance());
+                    nameText.SetText("Flont");
+                    break;
+                case "Flont! Yup, I’m going to accompany this knight here on his journey to kill the demon king!":
+                    nameText.SetText("Flont");
+                    break;
+                case "I- I’ll come with-":
+                    nameText.SetText("Flont");
+                    break;
+                case "No, you won’t! We’re going to be battling many dangerous monsters, and you’re terrified of blood!":
+                    nameText.SetText("Flont");
+                    break;
+                case "I, I don’t care.":
+                    nameText.SetText("Flont");
+                    break;
+                case "Fine! But only if you listen to us at all times!":
+                    nameText.SetText("Flont");
+                    break;
+                default:
+                    nameText.SetText("Dena");
+                    break;
+            }
         }
     }
 

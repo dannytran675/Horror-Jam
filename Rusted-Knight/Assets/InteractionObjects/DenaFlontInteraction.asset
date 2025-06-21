@@ -26,12 +26,12 @@ MonoBehaviour:
   - "I- I\u2019ll come with-"
   - you.
   - "No, you won\u2019t! We\u2019re going to be battling many dangerous monsters,
-    and you\u2019re terrified of blood! "
+    and you\u2019re terrified of blood!"
   - "I, I don\u2019t care."
   - "Even if you don\u2019t take me with you, I\u2019ll just sneak out and follow
     behind!"
   - "Hmm\u2026 That\u2019ll be even more dangerous for you\u2026"
-  - 'Fine! But only if you listen to us at all times! '
+  - Fine! But only if you listen to us at all times!
   - Y-yes!
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
