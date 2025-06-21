@@ -21,6 +21,8 @@ public class Cleric : CharacterInfo
             usedMove = true;
             belief -= 25;
         }
+        
+        AddFam(); //Increases Fam Regardless of Hit or Miss
     }
     public override void Move2(CharacterInfo character) //ray
     {
@@ -38,6 +40,8 @@ public class Cleric : CharacterInfo
             belief -= 10;
             ResetBoosts();
         }
+        
+        AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 
     public override void Move3(CharacterInfo character) //revive
@@ -47,11 +51,45 @@ public class Cleric : CharacterInfo
             if (character.hp <= 0)
             {
                 character.downed = false;
-                character.SetHP(character.maxHP/2); //Start with 50% Max HP
+                character.SetHP(character.maxHP / 2); //Start with 50% Max HP
             }
             belief -= 65;
+            usedMove = true;
         }
-        usedMove = true;
+        
+        AddFam(); //Increases Fam Regardless of Hit or Miss
+    }
+
+    public void IncreaseBelief(int beliefIncrease)
+    {
+        if (belief == 100)
+        {
+            return;
+        }
+        else if (belief + beliefIncrease > 100)
+        {
+            belief = 100;
+        }
+        else
+        {
+            belief += beliefIncrease;
+        }
+    }
+
+    public void DecreaseBelief(int beliefDecrease)
+    {
+        if (belief == 0)
+        {
+            return;
+        }
+        else if (belief - beliefDecrease < 0)
+        {
+            belief = 0;
+        }
+        else
+        {
+            belief -= beliefDecrease;
+        }
     }
 
 }

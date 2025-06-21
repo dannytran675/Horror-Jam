@@ -21,6 +21,8 @@ public class Knight : CharacterInfo
             usedMove = true;
             move1CD = 4;
         }
+        
+        AddFam(); //Increases Fam Regardless of Hit or Miss
     }
     public override void Move2(CharacterInfo character) //attack
     {
@@ -36,6 +38,8 @@ public class Knight : CharacterInfo
             move2CD = 1;
             ResetBoosts();
         }
+        
+        AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 
     public override void Move3(CharacterInfo character) //slice
@@ -50,7 +54,9 @@ public class Knight : CharacterInfo
 
             usedMove = true;
             move3CD = 3;
-            ResetBoosts(); 
+            ResetBoosts();
         }
+        
+        AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 }
