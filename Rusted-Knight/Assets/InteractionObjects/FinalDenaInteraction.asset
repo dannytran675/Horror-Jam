@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8858d5c92e9d2914bb34eaa6b8cfb6a3, type: 3}
+  m_Name: FinalDenaInteraction
+  m_EditorClassIdentifier: 
+  npcName: Dena
+  npcPortrait: {fileID: 0}
+  dialogueLines:
+  - "We\u2019re here. It\u2019s finally, finally time."
+  - "I\u2019m so\u2026 tired."
+  - It has failed me, has failed all of us.
+  - "Let\u2019s kill that bastard."
+  - First, the Demon King,
+  - "Then my eyes are set on killing that bastard \u201CHoly Spirit\u201D."
+  typingSpeed: 0.05
+  voiceSound: {fileID: 0}
+  voicePitch: 1
