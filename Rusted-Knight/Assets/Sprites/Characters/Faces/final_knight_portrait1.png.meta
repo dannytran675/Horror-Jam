@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: a19a6fd4c8cf54a479c9a4cdb4aee19b
+guid: f3533e6a36209624281e10a15f4a9208
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8115419193996482221
-    second: final knight north-Sheet_0
-  - first:
-      213: 723426036623510989
-    second: final knight north-Sheet_1
-  - first:
-      213: 2787838422477554333
-    second: final knight north-Sheet_2
-  - first:
-      213: 2985552613102842745
-    second: final knight north-Sheet_3
+      213: 7274232757941094151
+    second: final_knight_portrait1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final knight north-Sheet_0
+      name: final_knight_portrait1_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 35
-        width: 17
-        height: 25
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da61c8572c2cf9070800000000000000
-      internalID: 8115419193996482221
+      spriteID: 707c69e172443f460800000000000000
+      internalID: 7274232757941094151
       vertices: []
       indices: 
       edges: []
@@ -147,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1c0ece817aed3de44b920cd5c53ed062
+    spriteID: 5b744d94210971c4a8509ed71673a95f
     internalID: 0
     vertices: []
     indices: 
@@ -155,12 +146,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      final knight north-Sheet_0: 8115419193996482221
-      final knight north-Sheet_1: 723426036623510989
-      final knight north-Sheet_2: 2787838422477554333
-      final knight north-Sheet_3: 2985552613102842745
+      final_knight_portrait1_0: 7274232757941094151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
