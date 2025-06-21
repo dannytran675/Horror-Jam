@@ -48,10 +48,10 @@ public class BattleManager : MonoBehaviour
     }
 
     //Battle!
-    public IEnumerator BattleSequence()
-    {
+    // public IEnumerator BattleSequence()
+    // {
 
-    }
+    // }
 
     public bool canBattle()
     {
