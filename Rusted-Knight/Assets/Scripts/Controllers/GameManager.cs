@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _fadeInSceneTransition;
     [SerializeField] private GameObject _fadeOutSceneTransition;
 
-     private void Awake()
+    private void Awake()
     {
         // Ensure only one GameManager exists
         if (Instance == null)

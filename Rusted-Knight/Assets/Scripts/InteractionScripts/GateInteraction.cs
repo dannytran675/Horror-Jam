@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class GateInteraction : NPC
@@ -10,6 +11,7 @@ public class GateInteraction : NPC
     public NPCDialogue gateOpeningDialogue;
     public bool finalMessageDisplayed;
     public static bool gateOpened, gateOpenable;
+    public bool finalGateOpenable;
     public TMP_Text questionText;
     public GameObject answerButtons;
 
@@ -39,7 +41,7 @@ public class GateInteraction : NPC
         dialoguePanel.SetActive(true);
         PauseController.SetPause(true);
 
-        if (gateOpenable)
+        if (finalGateOpenable || gateOpenable)
         {
             //Switch to display the yes/no options
             DialogueHelper.ShowOnlyQuestion();
@@ -54,7 +56,7 @@ public class GateInteraction : NPC
         {
             StopAllCoroutines();
             //Completes the line so it's fully on display
-            if (gateOpenable)
+            if (finalGateOpenable || gateOpenable)
             {
                 questionText.SetText(gateOpeningDialogue.dialogueLines[dialogueIndex]);
             }
@@ -69,7 +71,7 @@ public class GateInteraction : NPC
             //If another line, type next line
             StartCoroutine(TypeLine());
         }
-        else if (gateOpenable && ++dialogueIndex < gateOpeningDialogue.dialogueLines.Length - 1)
+        else if ((finalGateOpenable || gateOpenable) && ++dialogueIndex < gateOpeningDialogue.dialogueLines.Length - 1)
         {
             StartCoroutine(TypeLine());
         }
@@ -82,7 +84,7 @@ public class GateInteraction : NPC
     {
         isTyping = true;
 
-        if (gateOpenable)
+        if (finalGateOpenable || gateOpenable)
         {
             questionText.SetText("");
 
@@ -143,7 +145,7 @@ public class GateInteraction : NPC
         //Type out the final message
         isTyping = true;
 
-        if (gateOpenable)
+        if (finalGateOpenable || gateOpenable)
         {
             questionText.SetText("");
 
@@ -170,7 +172,6 @@ public class GateInteraction : NPC
             finalMessageDisplayed = true;
             GameManager.Instance.FadeInSceneTransition();
             StartCoroutine(gateOpeningDelay(2.2f));
-
         }
 
     }
@@ -181,6 +182,11 @@ public class GateInteraction : NPC
         yield return new WaitForSeconds(delay);
         gateOpened = true;
         Debug.Log(gateOpened);
+        if (finalGateOpenable)
+        {
+            GameManager.Instance.FadeOutSceneTransition();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
 

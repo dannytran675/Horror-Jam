@@ -3070,6 +3070,8 @@ MonoBehaviour:
   nameText: {fileID: 1866765016}
   gateOpeningDialogue: {fileID: 11400000, guid: ead4927b33e3ba54d881427cb922c27a, type: 2}
   finalMessageDisplayed: 0
+  finalGateOpened: 0
+  finalGateOpenable: 1
   questionText: {fileID: 505587082}
   answerButtons: {fileID: 1973251524}
 --- !u!61 &872150015
