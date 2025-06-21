@@ -1,7 +1,16 @@
 using UnityEngine;
 public class Cleric : CharacterInfo
 {
-    public int belief;
+    public int belief = 0;
+    public void Awake()
+    {
+        maxHP = 600;
+        hp = 600;
+        fam = 0;
+        crit = 0.125f;
+        usedMove = false;
+        downed = false;
+    }
     public override void move1(CharacterInfo character) //heal
     {
         if (belief >= 25)
@@ -18,7 +27,8 @@ public class Cleric : CharacterInfo
     }
     public override void move2(CharacterInfo character) //ray
     {
-        if (belief >= 10)
+        acc = 0.9;
+        if (ifHit(acc) && belief >= 10)
         {
             if (ifCrit())
             {
