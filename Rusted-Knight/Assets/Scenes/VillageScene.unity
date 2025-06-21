@@ -1750,7 +1750,7 @@ Transform:
   m_GameObject: {fileID: 552488455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.87, y: -2.2, z: 0}
+  m_LocalPosition: {x: 15.87, y: -3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4955,6 +4955,7 @@ MonoBehaviour:
   nameText: {fileID: 769035313}
   gateOpeningDialogue: {fileID: 11400000, guid: ead4927b33e3ba54d881427cb922c27a, type: 2}
   finalMessageDisplayed: 0
+  finalGateOpenable: 0
   questionText: {fileID: 1200287812}
   answerButtons: {fileID: 267052336}
 --- !u!1 &1508156090
