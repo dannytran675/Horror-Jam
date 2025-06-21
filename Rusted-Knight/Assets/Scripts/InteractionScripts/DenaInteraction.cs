@@ -4,9 +4,9 @@ using UnityEngine;
 public class DenaInteraction : NPC
 {
     public NPCDialogue mayorFirst;
-    public NPCDialogue denaFlontInteraction;
+    //public NPCDialogue denaFlontInteraction;
     public GameObject exitButton;
-    public bool startInteract, dialogueFinished, mayorDialogue, denaFlontDialogue;
+    public bool startInteract, dialogueFinished, mayorDialogue;
     public float xOffset = 2.82031f, yOffset = -5.09192f;
 
     public override bool CanInteract()
@@ -31,7 +31,6 @@ public class DenaInteraction : NPC
     }
     public override void Interact()
     {
-        Debug.Log("Interacting");
         if (dialogueFinished || (GameManager.isFading && !startInteract) || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
         {
             return;

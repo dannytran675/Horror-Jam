@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class MayorInteraction : NPC
 {
-    public bool dialogueFinished;
+    public NPCDialogue talkToDena;
+    public static bool doneMayorInteraction;
     public override void Interact()
     {
         if (GameManager.isFading || dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
@@ -38,6 +39,8 @@ public class MayorInteraction : NPC
         else
         {
             EndDialogue();
+            doneMayorInteraction = true;
+            dialogueData = talkToDena;
         }
     }
 

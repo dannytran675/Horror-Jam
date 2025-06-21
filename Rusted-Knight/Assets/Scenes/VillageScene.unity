@@ -1004,6 +1004,7 @@ GameObject:
   - component: {fileID: 352913435}
   - component: {fileID: 352913434}
   - component: {fileID: 352913436}
+  - component: {fileID: 352913437}
   m_Layer: 0
   m_Name: Dena
   m_TagString: Interactable
@@ -1144,14 +1145,28 @@ MonoBehaviour:
   dialogueText: {fileID: 1257266568}
   nameText: {fileID: 769035313}
   mayorFirst: {fileID: 11400000, guid: bfccda7f3313b1d48bc16eb4538dd5b7, type: 2}
-  denaFlontInteraction: {fileID: 11400000, guid: 4cb2837321e745847a625027c4e8bbf4, type: 2}
   exitButton: {fileID: 968697225}
   startInteract: 0
   dialogueFinished: 0
   mayorDialogue: 0
-  denaFlontDialogue: 0
   xOffset: 2.82031
   yOffset: -5.09192
+--- !u!114 &352913437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352913431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500f8958cb0d6034dab926361bf39fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 4cb2837321e745847a625027c4e8bbf4, type: 2}
+  dialoguePanel: {fileID: 1508156090}
+  dialogueText: {fileID: 1257266568}
+  nameText: {fileID: 769035313}
 --- !u!1 &389036479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1888,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1508156090}
   dialogueText: {fileID: 1257266568}
   nameText: {fileID: 769035313}
-  dialogueFinished: 0
+  talkToDena: {fileID: 11400000, guid: d4d774add7c883446873c5f1ac52cf17, type: 2}
 --- !u!1 &555982694
 GameObject:
   m_ObjectHideFlags: 0
