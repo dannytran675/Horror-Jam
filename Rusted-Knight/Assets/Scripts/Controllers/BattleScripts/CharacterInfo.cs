@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class CharacterInfo : MonoBehaviour
 {
-    public double maxHP, hp;
+    public int maxHP, hp;
     public int fam;
     public float crit, rnd;
-    public double dmgMultiplier = 1;
-    public static double critMultiplier = 2;
-    public double acc;
+    public float dmgMultiplier = 1;
+    public static float critMultiplier = 2;
+    public float acc;
+    public bool luckBoosted;
     public bool guarded, usedMove, downed;
 
     public virtual void Move1(CharacterInfo character)
@@ -25,17 +26,33 @@ public class CharacterInfo : MonoBehaviour
 
     }
 
-    public virtual void SetHP(double hp)
+    public virtual void SetHP(int hp)
     {
         this.hp = hp;
     }
 
-    public virtual void ReduceHP(double hp)
+    public virtual void ReduceHP(int hp)
     {
-        this.hp -= hp;
-        if (this.hp <= 0)
+        if (!downed)
         {
-            downed = true;
+            this.hp -= hp;
+            if (this.hp <= 0)
+            {
+                downed = true;
+            }
+        }
+
+    }
+
+    public virtual void IncreaseHP(int hp)
+    {
+        if (!downed)
+        {
+            this.hp += hp;
+            if (hp > maxHP)
+            {
+                this.hp = maxHP;
+            }
         }
     }
 
@@ -55,9 +72,34 @@ public class CharacterInfo : MonoBehaviour
         return (rnd <= crit);
     }
 
-    public bool IfHit(double acc)
+    public bool IfHit(float acc)
     {
         rnd = Random.Range(0f, 1f);
         return (rnd <= crit);
+    }
+
+    public bool CanHit(float acc)
+    {
+        return (luckBoosted || IfHit(acc));
+    }
+
+    public int DamageDealt(int baseDamage, bool critHit)
+    {
+        float damage = baseDamage * dmgMultiplier;
+
+        if (critHit)
+        {
+            damage *= critMultiplier;
+        }
+
+        int roundedDmg = (int) Mathf.Ceil(damage);
+        return roundedDmg;
+    }
+
+    public void ResetBoosts()
+    {
+        dmgMultiplier = 1;
+        luckBoosted = false;
+        crit = 0.125f;
     }
 }

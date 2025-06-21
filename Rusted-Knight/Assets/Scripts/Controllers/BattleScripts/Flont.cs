@@ -16,30 +16,30 @@ public class Flont : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //atk boost
     {
-        character.hp -= character.maxHP * 0.1;
-        character.dmgMultiplier = 1.2;
+        character.ReduceHP(character.maxHP/10);//10% Max HP Removed
+        character.dmgMultiplier = 1.2f;
         usedMove = true;
     }
 
     public override void Move2(CharacterInfo character) //heal
     {
-        hp -= maxHP * 0.1;
+        ReduceHP(maxHP / 10); //10% Max HP Removed
         if (clericInstance != null)
         {
             Debug.Log("Cleric healed by Flont");
-            clericInstance.hp += clericInstance.maxHP * 0.1;
+            clericInstance.IncreaseHP(clericInstance.maxHP / 10); //10% Max HP Healed
         }
         if (knightInstance != null)
         {
             Debug.Log("Knight healed by Flont");
-            knightInstance.hp += knightInstance.maxHP * 0.1;
+            knightInstance.IncreaseHP(knightInstance.maxHP / 10); //10% Max HP Healed
         }
     }
 
     public override void Move3(CharacterInfo character) //lucky
     {
-        character.hp -= character.maxHP * 0.2;
+        character.ReduceHP(character.maxHP/5); //20% Max HP Removed
         character.crit *= 2;
-        character.acc *= 2;
+        character.luckBoosted = true;
     }
 }

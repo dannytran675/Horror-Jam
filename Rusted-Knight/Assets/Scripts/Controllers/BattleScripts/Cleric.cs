@@ -15,31 +15,28 @@ public class Cleric : CharacterInfo
     {
         if (belief >= 25)
         {
-            hp -= maxHP * 0.25;
-            character.hp += maxHP * 0.3;
-            if (character.hp >= character.maxHP)
-            {
-                character.hp = character.maxHP;
-            }
+            belief -= 25;
+            character.IncreaseHP((character.maxHP / 10) * 3); //Healed for 30% Max HP
+
             usedMove = true;
             belief -= 25;
         }
     }
     public override void Move2(CharacterInfo character) //ray
     {
-        acc = 0.9;
-        if (IfHit(acc) && belief >= 10)
+        acc = 0.9f;
+        if (CanHit(acc) && belief >= 10)
         {
-            if (IfCrit())
-            {
-                character.hp -= 300;
-            }
-            else
-            {
-                character.hp -= 150;
-            }
+            belief -= 10;
+
+            int damage = DamageDealt(150, IfCrit());
+
+            //Attacking
+            character.ReduceHP(damage);
+
             usedMove = true;
             belief -= 10;
+            ResetBoosts();
         }
     }
 
@@ -50,7 +47,7 @@ public class Cleric : CharacterInfo
             if (character.hp <= 0)
             {
                 character.downed = false;
-                character.hp += character.maxHP * 0.3;
+                character.SetHP(character.maxHP/2); //Start with 50% Max HP
             }
             belief -= 65;
         }

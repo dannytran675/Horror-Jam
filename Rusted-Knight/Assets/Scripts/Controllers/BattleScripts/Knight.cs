@@ -24,38 +24,33 @@ public class Knight : CharacterInfo
     }
     public override void Move2(CharacterInfo character) //attack
     {
-        acc = 0.8;
-        if (IfHit(acc) && move2CD == 0)
+        acc = 0.8f;
+        if (CanHit(acc) && move2CD == 0)
         {
-            double damage = 65 * dmgMultiplier;
-            if (IfCrit())
-            {
-                damage *= critMultiplier;
-            }
+            int damage = DamageDealt(65, IfCrit());
 
             //Attacking
             character.ReduceHP(damage);
 
             usedMove = true;
             move2CD = 1;
+            ResetBoosts();
         }
     }
 
     public override void Move3(CharacterInfo character) //slice
     {
-        acc = 0.9;
-        if (IfHit(acc) && move3CD == 0)
+        acc = 0.9f;
+        if (CanHit(acc) && move3CD == 0)
         {
-            if (IfCrit())
-            {
-                character.hp -= 200 * dmgMultiplier;
-            }
-            else
-            {
-                character.hp -= 400 * dmgMultiplier;
-            }
+            int damage = DamageDealt(200, IfCrit());
+
+            //Attacking
+            character.ReduceHP(damage);
+
             usedMove = true;
             move3CD = 3;
+            ResetBoosts(); 
         }
     }
 }
