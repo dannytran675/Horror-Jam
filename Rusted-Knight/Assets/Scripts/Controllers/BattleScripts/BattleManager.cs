@@ -1,13 +1,22 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
-    CharacterInfo[] battlers = new CharacterInfo[3];
+    [SerializeField] private CharacterInfo[] battlers = new CharacterInfo[3];
+
+    Knight rustedKnight;
     [SerializeField] private TMP_Text[] HPTexts = new TMP_Text[3];
 
     //For all cooldowns or percentages
     [SerializeField] private TMP_Text[] CDTexts = new TMP_Text[9];
+
+    //Buttons for each player's moves
+    [SerializeField] private Button[] moveButtons = new Button[9];
+    [SerializeField] private Button[] characterSelectButtons = new Button[3];
+    [SerializeField] private Button endTurnButton;
 
     //Belief text
     [SerializeField] private TMP_Text beliefText;
@@ -15,26 +24,152 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        HPTexts[0].SetText("HP : 1000");
-        HPTexts[1].SetText("HP : 600");
-        HPTexts[2].SetText("HP : 500");
+        rustedKnight = battlers[0] as Knight;
+
+        DisplayHPs();
 
         beliefText.SetText("Belief: 10%");
 
         //Knight Cooldowns
-        CDTexts[0].SetText("[0]");
-        CDTexts[1].SetText("[1]");
-        CDTexts[2].SetText("[3]");
+        DisplayKnightCD();
 
         //Dena Costs
-        CDTexts[3].SetText("[25%]");
-        CDTexts[4].SetText("[10%]");
-        CDTexts[5].SetText("[65%]");
+        DisplayDenaCosts();
 
         //Flont all set to 0 since it costs HP
         CDTexts[6].SetText("[0]");
         CDTexts[7].SetText("[0]");
         CDTexts[8].SetText("[0]");
 
+        DisableAllButtons();
+        print("Welcome to the battle sequence!");
+
+
     }
+
+    //Battle!
+    public IEnumerator BattleSequence()
+    {
+
+    }
+
+    public bool canBattle()
+    {
+        bool canBattle = true;
+
+        for (int i = 0; i < battlers.Length; i++)
+        {
+
+        }
+        return canBattle;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Visual Methods
+    public void DisplayKnightCD()
+    {
+        //Knight Cooldowns
+        CDTexts[0].SetText($"[{rustedKnight.move1CD}]");
+        CDTexts[1].SetText($"[{rustedKnight.move2CD}]");
+        CDTexts[2].SetText($"[{rustedKnight.move3CD}]");
+    }
+
+    public void DisplayDenaCosts()
+    {
+        CDTexts[3].SetText("[25%]");
+        CDTexts[4].SetText("[10%]");
+        CDTexts[5].SetText("[65%]");
+    }
+
+    public void DisplayHPs()
+    {
+        HPTexts[0].SetText($"HP : {battlers[0].hp}");
+        HPTexts[1].SetText($"HP : {battlers[1].hp}");
+        HPTexts[2].SetText($"HP : {battlers[2].hp}");
+    }
+
+
+    public void print(string s)
+    {
+        TextInstantiator.Instance.AddText(s);
+    }
+
+
+
+
+
+
+
+
+
+
+    //Button Enabling and Disabling
+    public void DisableAllButtons()
+    {
+        DisablePlayerButtons();
+        DisableMoveButtons();
+        DisableEndTurnButton();
+    }
+
+    public void DisablePlayerButtons()
+    {
+        for (int i = 0; i < characterSelectButtons.Length; i++)
+        {
+            characterSelectButtons[i].interactable = false;
+        }
+    }
+
+    public void DisableMoveButtons()
+    {
+        for (int i = 0; i < moveButtons.Length; i++)
+        {
+            moveButtons[i].interactable = false;
+        }
+    }
+
+    public void DisableEndTurnButton()
+    {
+        endTurnButton.interactable = false;
+    }
+
+    public void EnableAllButtons()
+    {
+        EnablePlayerButtons();
+        EnableMoveButtons();
+        EnableEndTurnButton();
+    }
+
+    public void EnablePlayerButtons()
+    {
+        for (int i = 0; i < characterSelectButtons.Length; i++)
+        {
+            characterSelectButtons[i].interactable = true;
+        }
+    }
+
+    public void EnableMoveButtons()
+    {
+        for (int i = 0; i < moveButtons.Length; i++)
+        {
+            moveButtons[i].interactable = true;
+        }
+    }
+
+    public void EnableEndTurnButton()
+    {
+        endTurnButton.interactable = true;
+    }
+
 }

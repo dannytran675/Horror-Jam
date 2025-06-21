@@ -8,12 +8,12 @@ public class Knight : CharacterInfo
         // Set the inherited field values here instead
         maxHP = 1000;
         hp = 1000;
-        fam = 0;
+        fam = 1;
         crit = 0.125f;
         usedMove = false;
         downed = false;
     }
-    public override void move1(CharacterInfo character) //guard
+    public override void Move1(CharacterInfo character) //guard
     {
         if (move1CD == 0)
         {
@@ -22,30 +22,31 @@ public class Knight : CharacterInfo
             move1CD = 4;
         }
     }
-    public override void move2(CharacterInfo character) //attack
+    public override void Move2(CharacterInfo character) //attack
     {
         acc = 0.8;
-        if (ifHit(acc) && move2CD == 0)
+        if (IfHit(acc) && move2CD == 0)
         {
-            if (ifCrit())
+            double damage = 65 * dmgMultiplier;
+            if (IfCrit())
             {
-                character.hp -= 65 * dmgMultiplier;
+                damage *= critMultiplier;
             }
-            else
-            {
-                character.hp -= 130 * dmgMultiplier;
-            }
+
+            //Attacking
+            character.ReduceHP(damage);
+
             usedMove = true;
             move2CD = 1;
         }
     }
 
-    public override void move3(CharacterInfo character) //slice
+    public override void Move3(CharacterInfo character) //slice
     {
         acc = 0.9;
-        if (ifHit(acc) && move3CD == 0)
+        if (IfHit(acc) && move3CD == 0)
         {
-            if (ifCrit())
+            if (IfCrit())
             {
                 character.hp -= 200 * dmgMultiplier;
             }

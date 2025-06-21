@@ -11,7 +11,7 @@ public class Cleric : CharacterInfo
         usedMove = false;
         downed = false;
     }
-    public override void move1(CharacterInfo character) //heal
+    public override void Move1(CharacterInfo character) //heal
     {
         if (belief >= 25)
         {
@@ -25,12 +25,12 @@ public class Cleric : CharacterInfo
             belief -= 25;
         }
     }
-    public override void move2(CharacterInfo character) //ray
+    public override void Move2(CharacterInfo character) //ray
     {
         acc = 0.9;
-        if (ifHit(acc) && belief >= 10)
+        if (IfHit(acc) && belief >= 10)
         {
-            if (ifCrit())
+            if (IfCrit())
             {
                 character.hp -= 300;
             }
@@ -43,7 +43,7 @@ public class Cleric : CharacterInfo
         }
     }
 
-    public override void move3(CharacterInfo character) //revive
+    public override void Move3(CharacterInfo character) //revive
     {
         if (belief >= 65)
         {
