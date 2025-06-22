@@ -7779,7 +7779,7 @@ GameObject:
   - component: {fileID: 1176302954}
   - component: {fileID: 1176302953}
   m_Layer: 0
-  m_Name: Epic Quest
+  m_Name: Battle BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

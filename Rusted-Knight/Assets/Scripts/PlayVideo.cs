@@ -5,6 +5,7 @@ using System.Collections;
 
 public class PlayVideo : MonoBehaviour
 {
+    public AudioSource musicAudioSource;
     public VideoPlayer videoPlayer;
     public VideoClip videoClip;
     // Check if video is currently playing
@@ -67,11 +68,12 @@ public class PlayVideo : MonoBehaviour
 
     void playVideo()
     {
+        musicAudioSource.mute = true;
         screen.SetActive(true);
         videoPlayer.Play();
         Debug.Log("Video playing!");
     }
-    
+
 
     void OnDestroy()
     {

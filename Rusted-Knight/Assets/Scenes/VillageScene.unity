@@ -5512,7 +5512,7 @@ GameObject:
   - component: {fileID: 1738384538}
   - component: {fileID: 1738384537}
   m_Layer: 0
-  m_Name: 11- Feet of Air
+  m_Name: Village BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6160,6 +6160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c611a59a6888a4289206ac9baa52eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicAudioSource: {fileID: 1738384537}
   videoPlayer: {fileID: 1866270593}
   videoClip: {fileID: 0}
   screen: {fileID: 1407192839}
