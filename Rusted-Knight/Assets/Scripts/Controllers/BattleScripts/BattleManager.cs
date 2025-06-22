@@ -19,6 +19,7 @@ public class BattleManager : MonoBehaviour
 
     //Buttons for each player's moves
     [SerializeField] private Button[] moveButtons = new Button[9];
+    [SerializeField] private TMP_Text[] buttonTexts = new TMP_Text[9];
     [SerializeField] private Button[] characterSelectButtons = new Button[3];
     [SerializeField] private Button endTurnButton;
 
@@ -26,6 +27,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private TMP_Text beliefText;
 
     bool playerAttacked;
+
+    private bool[,] movesSelected = new bool[3, 3];
 
 
     void Start()
