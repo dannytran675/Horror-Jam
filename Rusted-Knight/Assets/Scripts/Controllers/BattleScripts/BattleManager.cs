@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
     bool playerAttacked;
 
     private bool[,] movesSelected = new bool[3, 3];
+    private bool turnsExecuted;
 
 
     void Start()
@@ -78,17 +79,30 @@ public class BattleManager : MonoBehaviour
 
             //Player turn
             print(ColourText.BlueString("Player turn"));
+
+            //Enable all buttons except for player selection
             EnableAllButtons();
+            //Ensure moves you can't perform are being disabled
+            UpdateMoveButtons();
             yield return new WaitUntil(() => playerAttacked);
+
+            //Ensures you can't press buttons after confirming your turn is over
+            DisableAllButtons();
+
+            //remove green highlight
+            ResetAllMoveButtonsText();
 
             print("Player moves: ");
             StartCoroutine(EndOfTurnSequence(2));
-            yield return new WaitForSeconds(6);
-
+            Debug.Log(turnsExecuted);
+            yield return new WaitUntil(() => turnsExecuted);
+            Debug.Log("hi");
+            //Deselect all buttons
+            ResetAllMoveButtonSelections();
 
             //Boss turn
             print(ColourText.RedString("Boss turn"));
-            DisableAllButtons();
+            
             yield return new WaitForSeconds(2);
 
             //Switching turns;
@@ -161,6 +175,7 @@ public class BattleManager : MonoBehaviour
         DisplayHPs();
         DisplayDenaCosts();
         DisplayKnightCD();
+        beliefText.SetText($"Belief: {dena.belief}%");
     }
 
 
@@ -210,6 +225,7 @@ public class BattleManager : MonoBehaviour
     public void EnableAllButtons()
     {
         EnablePlayerButtons();
+        DisablePlayerButtons();
         EnableMoveButtons();
         EnableEndTurnButton();
     }
@@ -228,6 +244,34 @@ public class BattleManager : MonoBehaviour
         {
             moveButtons[i].interactable = true;
         }
+    }
+
+    public void UpdateMoveButtons()
+    {
+        KnightButtonEnabler();
+    }
+
+    public void ResetAllMoveButtonSelections()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                movesSelected[i, j] = false;
+            }
+        }
+    }
+    public void ResetAllMoveButtonsText()
+    {
+        buttonTexts[0].SetText("Guardian");
+        buttonTexts[1].SetText("Flurry");
+        buttonTexts[2].SetText("Altrutistic Pierce");
+        buttonTexts[3].SetText("Bless");
+        buttonTexts[4].SetText("Surpress");
+        buttonTexts[5].SetText("Necromance");
+        buttonTexts[6].SetText("Coagulation");
+        buttonTexts[7].SetText("Revitalize");
+        buttonTexts[8].SetText("Adrenalin");
     }
 
     public void EnableEndTurnButton()
@@ -265,6 +309,39 @@ public class BattleManager : MonoBehaviour
         for (int j = 0; j < 3; j++)
         {
             movesSelected[0, j] = false;
+        }
+    }
+
+    public void KnightButtonEnabler()
+    {
+        //Disable/Enable Knight move 1
+        if (rustedKnight.move1CD == 0)
+        {
+            moveButtons[0].interactable = true;
+        }
+        else
+        {
+            moveButtons[0].interactable = false;
+        }
+
+        //Disable/Enable Knight move 2
+        if (rustedKnight.move2CD == 0)
+        {
+            moveButtons[1].interactable = true;
+        }
+        else
+        {
+            moveButtons[1].interactable = false;
+        }
+
+        //Disable/Enable Knight move 3
+        if (rustedKnight.move3CD == 0)
+        {
+            moveButtons[2].interactable = true;
+        }
+        else
+        {
+            moveButtons[2].interactable = false;
         }
     }
 
@@ -338,18 +415,27 @@ public class BattleManager : MonoBehaviour
 
     public IEnumerator EndOfTurnSequence(int delayBetweenMoves)
     {
+        turnsExecuted = false;
         for (int i = 0; i < 3; i++)
         {
+            bool characterMoved = false;
             for (int j = 0; j < 3; j++)
             {
                 if (movesSelected[i, j])
                 {
+                    characterMoved = true;
                     MoveExecutionScenarios(i, j);
                     UpdateDisplay();
                     yield return new WaitForSeconds(delayBetweenMoves);
                 }
             }
+            if (i == 0 && !characterMoved)
+            {
+                rustedKnight.CDUpdate(-1);
+                UpdateDisplay();
+            }
         }
+        turnsExecuted =  true;
     }
 
     public void MoveExecutionScenarios(int characterIndex, int moveNum)

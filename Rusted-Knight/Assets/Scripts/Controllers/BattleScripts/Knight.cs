@@ -25,6 +25,7 @@ public class Knight : CharacterInfo
             guarded = true;
             usedMove = true;
             CDUpdate(0);
+            print($"{characterName} used Guardian against {character.characterName}!");
         }
 
         ResetAccuracyDebuff();
@@ -40,13 +41,24 @@ public class Knight : CharacterInfo
             int damage = DamageDealt(65, IfCrit());
 
             //Attacking
-            character.ReduceHP(damage);
+            if (character != null)
+            {
+                character.ReduceHP(damage);
+                print($"{characterName} dealt {damage} damage to {character.characterName}!");
+            }
 
             usedMove = true;
-            CDUpdate(1);
             ResetBoosts();
         }
+        else
+        {
+            if (character != null)
+            {
+                print($"{characterName} tried to use Flurry against {character.characterName} but missed...");
+            }
+        }
 
+        CDUpdate(1);
         ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
@@ -61,13 +73,25 @@ public class Knight : CharacterInfo
             int damage = DamageDealt(200, IfCrit());
 
             //Attacking
-            character.ReduceHP(damage);
+            if (character != null)
+            {
+                character.ReduceHP(damage);
+                print($"{characterName} dealt {damage} damage to {character.characterName}!");
+            }
+
 
             usedMove = true;
-            CDUpdate(2);
             ResetBoosts();
         }
+        else
+        {
+            if (character != null)
+            {
+                print($"{characterName} tried to use Altruistic Pierce against {character.characterName} but missed...");
+            }
+        }
 
+        CDUpdate(2);
         ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
@@ -76,6 +100,7 @@ public class Knight : CharacterInfo
     {
         if (moveNum == 0)
         {
+            Debug.Log("Move1");
             move1CD = 4;
             if (move2CD > 0) move2CD -= 1;
             if (move3CD > 0) move3CD -= 1;
@@ -83,6 +108,7 @@ public class Knight : CharacterInfo
 
         else if (moveNum == 1)
         {
+            Debug.Log("Move2");
             move2CD = 1;
             if (move1CD > 0) move1CD -= 1;
             if (move3CD > 0) move3CD -= 1;
@@ -90,9 +116,17 @@ public class Knight : CharacterInfo
 
         else if (moveNum == 2)
         {
+            Debug.Log("Move3");
             move3CD = 3;
             if (move1CD > 0) move1CD -= 1;
             if (move2CD > 0) move2CD -= 1;
+        }
+
+        else
+        {
+            if (move1CD > 0) move1CD -= 1;
+            if (move2CD > 0) move2CD -= 1;
+            if (move3CD > 0) move3CD -= 1;
         }
     }
 }

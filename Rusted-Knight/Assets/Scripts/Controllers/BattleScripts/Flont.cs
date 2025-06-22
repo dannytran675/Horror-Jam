@@ -32,17 +32,39 @@ public class Flont : CharacterInfo
 
     public override void Move2(CharacterInfo character) //heal
     {
-        print("Revitalize!");
         ReduceHP(maxHP / 10); //10% Max HP Removed
+        print($"{characterName} lost {maxHP / 10} health using Revitalize.");
         if (clericInstance != null)
         {
             Debug.Log("Cleric healed by Flont");
+            int heal = clericInstance.maxHP / 10;
+            int hpBef = clericInstance.hp;
+            string personName = clericInstance.characterName;
             clericInstance.IncreaseHP(clericInstance.maxHP / 10); //10% Max HP Healed
+            if (clericInstance.hp - hpBef > 0)
+            {
+                print($"{characterName} healed {personName} for {heal} health!");
+            }
+            else
+            {
+                print($"{characterName} tried to heal {personName} for {heal} health. But they're too healthy!");
+            }
         }
         if (knightInstance != null)
         {
             Debug.Log("Knight healed by Flont");
+            int heal = knightInstance.maxHP / 10;
+            int hpBef = knightInstance.hp;
+            string personName = knightInstance.characterName;
             knightInstance.IncreaseHP(knightInstance.maxHP / 10); //10% Max HP Healed
+            if (knightInstance.hp - hpBef > 0)
+            {
+                print($"{characterName} healed {personName} for {heal} health!");
+            }
+            else
+            {
+                print($"{characterName} tried to heal {personName} for {heal} health. But they're too healthy!");
+            }
         }
         
         ResetAccuracyDebuff();

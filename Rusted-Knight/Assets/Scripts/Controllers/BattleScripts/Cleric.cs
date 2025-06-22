@@ -38,9 +38,8 @@ public class Cleric : CharacterInfo
     }
     public override void Move2(CharacterInfo character) //ray
     {
-        print("Surpress!");
         SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
-        
+
         if (CanHit(acc) && belief >= beliefCost2)
         {
             DecreaseBelief(beliefCost2);
@@ -51,10 +50,18 @@ public class Cleric : CharacterInfo
             if (character != null)
             {
                 character.ReduceHP(damage);
+                print($"{characterName} dealt {damage} damage to {character.characterName} using Surpress!");
             }
 
             usedMove = true;
             ResetBoosts();
+        }
+        else
+        {
+            if (character != null)
+            {
+                print($"{characterName} tried to use Surpress against {character.characterName} but missed...");
+            }
         }
         
         ResetAccuracyDebuff();

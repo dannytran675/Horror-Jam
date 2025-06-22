@@ -55,7 +55,7 @@ public class CharacterInfo : MonoBehaviour
         if (!downed)
         {
             this.hp += hp;
-            if (hp > maxHP)
+            if (this.hp > maxHP)
             {
                 this.hp = maxHP;
             }
@@ -90,7 +90,7 @@ public class CharacterInfo : MonoBehaviour
     public bool IfHit(float acc)
     {
         rnd = Random.Range(0f, 1f);
-        return (rnd <= crit);
+        return (rnd <= acc);
     }
 
     public bool CanHit(float acc)
