@@ -1,22 +1,29 @@
 using UnityEngine;
 public class Cleric : CharacterInfo
 {
-    public int belief = 0;
+    public int belief = 50;
+    public int beliefCost1 = 20;
+    public int beliefCost2 = 12;
+    public int beliefCost3 = 50;
     public void Awake()
     {
-        maxHP = 600;
-        hp = 600;
+        maxHP = 700;
+        hp = maxHP;
         fam = 0;
         crit = 0.125f;
         usedMove = false;
         downed = false;
         characterName = "Dena";
+        belief = 50;
+        beliefCost1 = 20;
+        beliefCost2 = 12;
+        beliefCost3 = 50;
     }
     public override void Move1(CharacterInfo character) //heal
     {
-        if (belief >= 20)
+        if (belief >= beliefCost1)
         {
-            DecreaseBelief(20);
+            DecreaseBelief(beliefCost1);
 
             character.IncreaseHP((character.maxHP / 10) * 3); //Healed for 30% Max HP
 
@@ -30,9 +37,9 @@ public class Cleric : CharacterInfo
     {
         SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
         
-        if (CanHit(acc) && belief >= 12)
+        if (CanHit(acc) && belief >= beliefCost2)
         {
-            DecreaseBelief(12);
+            DecreaseBelief(beliefCost2);
 
             int damage = DamageDealt(150, IfCrit());
 
@@ -49,9 +56,9 @@ public class Cleric : CharacterInfo
 
     public override void Move3(CharacterInfo character) //revive
     {
-        if (belief >= 50)
+        if (belief >= beliefCost3)
         {
-            DecreaseBelief(50);
+            DecreaseBelief(beliefCost3);
 
             if (character.hp <= 0)
             {

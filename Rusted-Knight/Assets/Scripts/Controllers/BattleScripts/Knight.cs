@@ -13,6 +13,9 @@ public class Knight : CharacterInfo
         usedMove = false;
         downed = false;
         characterName = "The Knight";
+        move1CD = 0;
+        move2CD = 1;
+        move3CD = 3;
     }
     public override void Move1(CharacterInfo character) //guard
     {

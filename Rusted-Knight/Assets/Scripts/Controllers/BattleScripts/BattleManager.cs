@@ -8,6 +8,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private CharacterInfo[] battlers = new CharacterInfo[3];
 
     Knight rustedKnight;
+    Cleric dena;
     [SerializeField] private TMP_Text[] HPTexts = new TMP_Text[3];
 
     //For all cooldowns or percentages
@@ -25,10 +26,11 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         rustedKnight = battlers[0] as Knight;
+        dena = battlers[1] as Cleric;
 
         DisplayHPs();
 
-        beliefText.SetText("Belief: 10%");
+        beliefText.SetText($"Belief: {dena.belief}%");
 
         //Knight Cooldowns
         DisplayKnightCD();
@@ -88,9 +90,9 @@ public class BattleManager : MonoBehaviour
 
     public void DisplayDenaCosts()
     {
-        CDTexts[3].SetText("[25%]");
-        CDTexts[4].SetText("[10%]");
-        CDTexts[5].SetText("[65%]");
+        CDTexts[3].SetText($"[{dena.beliefCost1}%]");
+        CDTexts[4].SetText($"[{dena.beliefCost2}%]");
+        CDTexts[5].SetText($"[{dena.beliefCost3}%]");
     }
 
     public void DisplayHPs()
