@@ -10,6 +10,7 @@ public class Cleric : CharacterInfo
         crit = 0.125f;
         usedMove = false;
         downed = false;
+        characterName = "Dena";
     }
     public override void Move1(CharacterInfo character) //heal
     {
@@ -26,7 +27,8 @@ public class Cleric : CharacterInfo
     }
     public override void Move2(CharacterInfo character) //ray
     {
-        acc = 0.9f;
+        SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
+        
         if (CanHit(acc) && belief >= 10)
         {
             belief -= 10;

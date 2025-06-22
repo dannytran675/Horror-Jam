@@ -9,7 +9,9 @@ public class CharacterInfo : MonoBehaviour
     public static float critMultiplier = 2;
     public float acc;
     public bool luckBoosted;
+    public bool accuracyDebuffed;
     public bool guarded, usedMove, downed;
+    public string characterName;
 
     public virtual void Move1(CharacterInfo character)
     {
@@ -64,6 +66,15 @@ public class CharacterInfo : MonoBehaviour
     public virtual void AddFam()
     {
         fam++;
+    }
+
+    public void SetAccuracy(float baseAcc)
+    {
+        acc = baseAcc;
+        if (accuracyDebuffed)
+        {
+            acc -= 0.3f;
+        }
     }
 
     public bool IfCrit()

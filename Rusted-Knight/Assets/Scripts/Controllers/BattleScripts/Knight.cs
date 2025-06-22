@@ -6,12 +6,13 @@ public class Knight : CharacterInfo
     void Awake()
     {
         // Set the inherited field values here instead
-        maxHP = 1000;
-        hp = 1000;
+        maxHP = 1300;
+        hp = maxHP;
         fam = 1;
         crit = 0.125f;
         usedMove = false;
         downed = false;
+        characterName = "The Knight";
     }
     public override void Move1(CharacterInfo character) //guard
     {
@@ -26,7 +27,8 @@ public class Knight : CharacterInfo
     }
     public override void Move2(CharacterInfo character) //attack
     {
-        acc = 0.8f;
+        SetAccuracy(0.8f); //Put the base accuracy into the method, debuff applied by method
+        
         if (CanHit(acc) && move2CD == 0)
         {
             int damage = DamageDealt(65, IfCrit());
@@ -44,7 +46,8 @@ public class Knight : CharacterInfo
 
     public override void Move3(CharacterInfo character) //slice
     {
-        acc = 0.9f;
+        SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
+
         if (CanHit(acc) && move3CD == 0)
         {
             int damage = DamageDealt(200, IfCrit());
