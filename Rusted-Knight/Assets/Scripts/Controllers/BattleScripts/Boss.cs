@@ -4,8 +4,9 @@ using System.Collections;
 public class Boss : CharacterInfo
 {
     [SerializeField] private CharacterInfo[] battlers = new CharacterInfo[3];// Used so that the boss can directly access their HPs
-
+    Cleric dena;
     private CharacterInfo target;
+    private CharacterInfo orignialTarget;
 
 
 
@@ -13,6 +14,7 @@ public class Boss : CharacterInfo
 
     void Awake()
     {
+        dena = battlers[1] as Cleric;
         // Set the inherited field values here instead
         maxHP = 4000;
         hp = maxHP;
@@ -21,7 +23,7 @@ public class Boss : CharacterInfo
         dmgMultiplier = 1;
         usedMove = false;
         downed = false;
-        characterName = "Boss";
+        characterName = "The Demon King";
     }
 
     public void FindTarget()
@@ -36,29 +38,38 @@ public class Boss : CharacterInfo
                 target = c;
             }
         }
+        if (target != orignialTarget)
+        {
+            print($"{characterName}'s eye is on {target.characterName}.");
+            orignialTarget = target;
+        }
     }
 
     public void BossTurn()
     {
         float rollMove = Random.Range(0f, 1f);
 
-        FindTarget();
+        // FindTarget();
 
         if (rollMove < 0.3f) // 1, 2, 3
         {
+            FindTarget();
             Attack(target, 100);
         }
         else if (rollMove < 0.5f) // 4, 5
         {
+            FindTarget();
             target.accuracyDebuffed = true; //Debuffing stat is handled on character's side
             print($"{characterName} reduced the accuracy of {target.characterName}'s next move by 3!");
         }
         else if (rollMove < 0.7f) // 6, 7
         {
+            FindTarget();
             Attack(target, 200);
         }
         else if (rollMove < 0.9f)// 8, 9
         {
+            FindTarget();
             Attack(target, 400);
         }
         else // 10
@@ -83,6 +94,7 @@ public class Boss : CharacterInfo
             {
                 character.ReduceHP(damage);
                 print($"{characterName} hit {character.characterName} for {damage} damage!");
+                dena.DecreaseBelief(5);
             }
 
         }

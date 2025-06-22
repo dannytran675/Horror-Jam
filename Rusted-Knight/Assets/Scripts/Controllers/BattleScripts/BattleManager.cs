@@ -37,6 +37,7 @@ public class BattleManager : MonoBehaviour
     private bool turnsExecuted;
 
     private bool awaitingPlayerSelectDena, awaitingPlayerSelectFlont;
+    private bool startingNecromance;
 
 
     void Start()
@@ -96,11 +97,18 @@ public class BattleManager : MonoBehaviour
             //remove green highlight
             ResetAllMoveButtonsText();
 
+
             print("Player moves: ");
             StartCoroutine(EndOfTurnSequence(2));
             yield return new WaitUntil(() => turnsExecuted);
             //Deselect all buttons
             ResetAllMoveButtonSelections();
+
+            //Reset all usedMove variables
+            for (int i = 0; i < battlers.Length; i++)
+            {
+                battlers[i].usedMove = false;
+            }
 
             //Boss turn
             print(ColourText.RedString("Boss turn"));
@@ -254,6 +262,7 @@ public class BattleManager : MonoBehaviour
     public void UpdateMoveButtons()
     {
         KnightButtonEnabler();
+        DenaButtonEnabler();
     }
 
     public void ResetAllMoveButtonSelections()
@@ -276,7 +285,7 @@ public class BattleManager : MonoBehaviour
         buttonTexts[5].SetText("Necromance");
         buttonTexts[6].SetText("Coagulation");
         buttonTexts[7].SetText("Revitalize");
-        buttonTexts[8].SetText("Adrenalin");
+        buttonTexts[8].SetText("Adrenaline");
     }
 
     public void EnableEndTurnButton()
@@ -354,10 +363,28 @@ public class BattleManager : MonoBehaviour
     public void BlessTargetSelect()
     {
         awaitingPlayerSelectDena = true;
-        EnablePlayerButtons();
-        DisableMoveButtons();
-        DisableEndTurnButton();
-        print("Click on the icon of thecharacter you want to Bless");
+        if (!startingNecromance)
+        {
+            EnablePlayerButtons();
+            DisableMoveButtons();
+            DisableEndTurnButton();
+            print("Click on the icon of the character you want to Bless");
+        }
+        else
+        {
+            DisablePlayerButtons();
+            for (int i = 0; i < characterSelectButtons.Length; i++)
+            {
+                if (battlers[i].downed)
+                {
+                    characterSelectButtons[i].interactable = true;
+                }
+            }
+            DisableMoveButtons();
+            DisableEndTurnButton();
+            print("Click on the icon of the character you want to revive.");
+        }
+        
     }
 
     public void ExitTargetSelect()
@@ -385,9 +412,11 @@ public class BattleManager : MonoBehaviour
 
     public void NecromanceButton()
     {
+        startingNecromance = true;
         ResetButtonTextsDena();
         buttonTexts[5].SetText(ColourText.GreenString("Necromance"));
         movesSelected[1, 2] = true;
+        BlessTargetSelect();
     }
 
     public void ResetButtonTextsDena()
@@ -401,13 +430,65 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    public void DenaButtonEnabler()
+    {
+        if (dena.belief < 50)
+        {
+            moveButtons[5].interactable = false;
+            CDTexts[5].SetText(ColourText.RedString($"[{dena.beliefCost3}%]"));
+        }
+        else
+        {
+            moveButtons[5].interactable = true;
+            CDTexts[5].SetText(ColourText.GreenString($"[{dena.beliefCost3}%]"));
+        }
+
+        //If neither teammate is dead, can't necromance
+        if (!battlers[0].downed && !battlers[2].downed)
+        {
+            moveButtons[5].interactable = false;
+        }
+
+        if (dena.belief < 20)
+        {
+            moveButtons[3].interactable = false;
+            CDTexts[3].SetText(ColourText.RedString($"[{dena.beliefCost1}%]"));
+        }
+        else
+        {
+            moveButtons[3].interactable = true;
+            CDTexts[3].SetText(ColourText.GreenString($"[{dena.beliefCost1}%]"));
+        }
+
+        if (dena.belief < 12)
+        {
+            moveButtons[4].interactable = false;
+            CDTexts[4].SetText(ColourText.RedString($"[{dena.beliefCost2}%]"));
+        }
+        else 
+        {
+            moveButtons[4].interactable = true;
+            CDTexts[4].SetText(ColourText.GreenString($"[{dena.beliefCost2}%]"));
+        }
+    }
+
     //Flont Move Buttons
 
+    public void FlontTargetSelect()
+    {
+        awaitingPlayerSelectFlont = true;
+        EnablePlayerButtons();
+        characterSelectButtons[2].interactable = false; //Disables flont's selection
+        DisableMoveButtons();
+        DisableEndTurnButton();
+        print("Click on the icon of the character you want to use this move on.");
+    }
     public void CoagulationButton()
     {
         ResetButtonTextsFlont();
         buttonTexts[6].SetText(ColourText.GreenString("Coagulation"));
         movesSelected[2, 0] = true;
+        FlontTargetSelect();
     }
 
     public void RevitalizeButton()
@@ -415,20 +496,22 @@ public class BattleManager : MonoBehaviour
         ResetButtonTextsFlont();
         buttonTexts[7].SetText(ColourText.GreenString("Revitalize"));
         movesSelected[2, 1] = true;
+        FlontTargetSelect();
     }
 
-    public void AdrenalinButton()
+    public void AdrenalineButton()
     {
         ResetButtonTextsFlont();
-        buttonTexts[8].SetText(ColourText.GreenString("Adrenalin"));
+        buttonTexts[8].SetText(ColourText.GreenString("Adrenaline"));
         movesSelected[2, 2] = true;
+        FlontTargetSelect();
     }
 
     public void ResetButtonTextsFlont()
     {
         buttonTexts[6].SetText("Coagulation");
         buttonTexts[7].SetText("Revitalize");
-        buttonTexts[8].SetText("Adrenalin");
+        buttonTexts[8].SetText("Adrenaline");
         for (int j = 0; j < 3; j++)
         {
             movesSelected[2, j] = false;
@@ -450,6 +533,15 @@ public class BattleManager : MonoBehaviour
                     StartCoroutine(MoveExecutionScenariosCoroutine(i, j, delayBetweenMoves));
                     UpdateDisplay();
                     yield return new WaitUntil(() => singleTurnExecuted);
+                    if (battlers[i].critLanded)
+                    {
+                        dena.IncreaseBelief(20);
+                    }
+                    else
+                    {
+                        dena.IncreaseBelief(10);
+                    }
+                    UpdateDisplay();
                 }
             }
             if (i == 0 && !characterMoved)
@@ -504,13 +596,13 @@ public class BattleManager : MonoBehaviour
             switch (moveNum)
             {
                 case 0:
-                    battler.Move1(flontTarget); //Bless
+                    battler.Move1(flontTarget); //Coagulation
                     break;
                 case 1:
-                    battler.Move2(demonKing); //Surpress
+                    battler.Move2(flontTarget); //Revitalize
                     break;
                 case 2:
-                    battler.Move3(flontTarget); //Necromance
+                    battler.Move3(flontTarget); //Adrenalin
                     break;
             }
         }
@@ -526,13 +618,21 @@ public class BattleManager : MonoBehaviour
         {
             denaTarget = battlers[0];
             awaitingPlayerSelectDena = false;
-            print($"Dena will Bless {denaTarget.characterName}.");
+            if (startingNecromance)
+            {
+                print($"Dena will bring back {denaTarget.characterName}");
+            }
+            else
+            {
+                print($"Dena will Bless {denaTarget.characterName}.");
+            }
             ExitTargetSelect();
         }
         else if (awaitingPlayerSelectFlont)
         {
             flontTarget = battlers[0];
             awaitingPlayerSelectFlont = false;
+            print($"Flont will target {flontTarget.characterName}.");
             ExitTargetSelect();
         }
 
@@ -544,13 +644,21 @@ public class BattleManager : MonoBehaviour
         {
             denaTarget = battlers[1];
             awaitingPlayerSelectDena = false;
-            print($"Dena will Bless herself.");
+            if (startingNecromance)
+            {
+                print($"Dena will bring back {denaTarget.characterName}");
+            }
+            else
+            {
+                print($"Dena will Bless {denaTarget.characterName}.");
+            }
             ExitTargetSelect();
         }
         else if (awaitingPlayerSelectFlont)
         {
             flontTarget = battlers[1];
             awaitingPlayerSelectFlont = false;
+            print($"Flont will target {flontTarget.characterName}.");
             ExitTargetSelect();
         }
 
@@ -562,13 +670,21 @@ public class BattleManager : MonoBehaviour
         {
             denaTarget = battlers[2];
             awaitingPlayerSelectDena = false;
-            print($"Dena will Bless {denaTarget.characterName}.");
+            if (startingNecromance)
+            {
+                print($"Dena will bring back {denaTarget.characterName}");
+            }
+            else
+            {
+                print($"Dena will Bless {denaTarget.characterName}.");
+            }
             ExitTargetSelect();
         }
         else if (awaitingPlayerSelectFlont)
         {
             flontTarget = battlers[2];
             awaitingPlayerSelectFlont = false;
+            print($"Flont will target {flontTarget.characterName}.");
             ExitTargetSelect();
         }
 

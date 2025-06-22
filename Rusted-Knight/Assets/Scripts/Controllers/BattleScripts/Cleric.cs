@@ -56,7 +56,8 @@ public class Cleric : CharacterInfo
         {
             DecreaseBelief(beliefCost2);
 
-            int damage = DamageDealt(150, IfCrit());
+            critLanded = IfCrit();
+            int damage = DamageDealt(150, critLanded);
 
             //Attacking
             if (character != null)
@@ -73,6 +74,7 @@ public class Cleric : CharacterInfo
             if (character != null)
             {
                 print($"{characterName} tried to use Surpress against {character.characterName} but missed...");
+                critLanded = false;
             }
         }
         
@@ -108,11 +110,14 @@ public class Cleric : CharacterInfo
         }
         else if (belief + beliefIncrease > 100)
         {
+            int effectiveGain = 100 - belief;
             belief = 100;
+            print($"{characterName} gained {effectiveGain}% belief.");
         }
         else
         {
             belief += beliefIncrease;
+            print($"{characterName} gained {beliefIncrease}% belief.");
         }
     }
 
@@ -125,12 +130,14 @@ public class Cleric : CharacterInfo
         else if (belief - beliefDecrease <= 0)
         {
             belief = 0;
+            hp = 0;
             downed = true;
             print("Dena has lost all hope. She has given up.");
         }
         else
         {
             belief -= beliefDecrease;
+            print($"{characterName} has lost {beliefDecrease}% belief.");
         }
     }
 

@@ -12,6 +12,7 @@ public class CharacterInfo : MonoBehaviour
     public bool accuracyDebuffed;
     public bool guarded, usedMove, downed;
     public string characterName;
+    public bool critLanded;
 
     public void print(string s)
     {

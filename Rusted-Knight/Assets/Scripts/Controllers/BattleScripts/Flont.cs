@@ -17,11 +17,14 @@ public class Flont : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //atk boost
     {
-        print("Coagulation!");
         if (character != null)
         {
-            character.ReduceHP(character.maxHP / 10);//10% Max HP Removed
+            print($"{characterName} used Coagulation on {character.characterName}!");
+            int hpOff = character.maxHP / 10;
+            character.ReduceHP(hpOff);//10% Max HP Removed
             character.dmgMultiplier = 1.2f;
+            print($"{character.characterName} lost {hpOff} HP");
+            print($"{character.characterName}'s next attack will deal 20% more damage");
         }
         
         usedMove = true;
@@ -34,14 +37,13 @@ public class Flont : CharacterInfo
     {
         ReduceHP(maxHP / 10); //10% Max HP Removed
         print($"{characterName} lost {maxHP / 10} health using Revitalize.");
-        if (clericInstance != null)
+        if (character != null)
         {
-            Debug.Log("Cleric healed by Flont");
-            int heal = clericInstance.maxHP / 10;
-            int hpBef = clericInstance.hp;
-            string personName = clericInstance.characterName;
-            clericInstance.IncreaseHP(clericInstance.maxHP / 10); //10% Max HP Healed
-            if (clericInstance.hp - hpBef > 0)
+            int heal = character.maxHP / 10;
+            int hpBef = character.hp;
+            string personName = character.characterName;
+            character.IncreaseHP(character.maxHP / 10); //10% Max HP Healed
+            if (character.hp - hpBef > 0)
             {
                 print($"{characterName} healed {personName} for {heal} health!");
             }
@@ -50,22 +52,8 @@ public class Flont : CharacterInfo
                 print($"{characterName} tried to heal {personName} for {heal} health. But they're too healthy!");
             }
         }
-        if (knightInstance != null)
-        {
-            Debug.Log("Knight healed by Flont");
-            int heal = knightInstance.maxHP / 10;
-            int hpBef = knightInstance.hp;
-            string personName = knightInstance.characterName;
-            knightInstance.IncreaseHP(knightInstance.maxHP / 10); //10% Max HP Healed
-            if (knightInstance.hp - hpBef > 0)
-            {
-                print($"{characterName} healed {personName} for {heal} health!");
-            }
-            else
-            {
-                print($"{characterName} tried to heal {personName} for {heal} health. But they're too healthy!");
-            }
-        }
+
+        usedMove = true;
         
         ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
@@ -73,13 +61,18 @@ public class Flont : CharacterInfo
 
     public override void Move3(CharacterInfo character) //lucky
     {
-        print("Adrenalin!");
         if (character != null)
         {
-            character.ReduceHP(character.maxHP / 5); //20% Max HP Removed
+            print($"{characterName} used Adrenaline on {character.characterName}!");
+            int hpOff = character.maxHP / 5;
+            character.ReduceHP(hpOff); //20% Max HP Removed
             character.crit *= 2;
             character.luckBoosted = true;
+            print($"{character.characterName} lost {hpOff} HP");
+            print($"{character.characterName} feels lucky");
         }
+
+        usedMove = true;
         
         ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss

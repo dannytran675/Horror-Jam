@@ -38,7 +38,8 @@ public class Knight : CharacterInfo
 
         if (CanHit(acc) && move2CD == 0)
         {
-            int damage = DamageDealt(65, IfCrit());
+            critLanded = IfCrit();
+            int damage = DamageDealt(65, critLanded);
 
             //Attacking
             if (character != null)
@@ -56,6 +57,8 @@ public class Knight : CharacterInfo
             {
                 print($"{characterName} tried to use Flurry against {character.characterName} but missed...");
             }
+            critLanded = false;
+            usedMove = false;
         }
 
         CDUpdate(1);
@@ -70,7 +73,8 @@ public class Knight : CharacterInfo
 
         if (CanHit(acc) && move3CD == 0)
         {
-            int damage = DamageDealt(200, IfCrit());
+            critLanded = IfCrit();
+            int damage = DamageDealt(200, critLanded);
 
             //Attacking
             if (character != null)
@@ -89,6 +93,8 @@ public class Knight : CharacterInfo
             {
                 print($"{characterName} tried to use Altruistic Pierce against {character.characterName} but missed...");
             }
+            usedMove = false;
+            critLanded = false;
         }
 
         CDUpdate(2);
