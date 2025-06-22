@@ -22,7 +22,8 @@ public class Knight : CharacterInfo
             usedMove = true;
             move1CD = 4;
         }
-        
+
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
     public override void Move2(CharacterInfo character) //attack
@@ -41,6 +42,7 @@ public class Knight : CharacterInfo
             ResetBoosts();
         }
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 
@@ -60,6 +62,7 @@ public class Knight : CharacterInfo
             ResetBoosts();
         }
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 }

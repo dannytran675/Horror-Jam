@@ -28,10 +28,11 @@ public class Boss : CharacterInfo
         int highestFam = -1;
         for (int i = 0; i < battlers.Length; i++)
         {
-            if (battlers[i].fam > highestFam)
+            CharacterInfo c = battlers[i];
+            if (!c.downed && c.fam > highestFam)
             {
-                highestFam = battlers[i].fam;
-                target = battlers[i];
+                highestFam = c.fam;
+                target = c;
             }
         }
     }
@@ -92,7 +93,11 @@ public class Boss : CharacterInfo
     {
         for (int i = 0; i < battlers.Length; i++)
         {
-            Attack(battlers[i], baseDamage);
+            CharacterInfo c = battlers[i];
+            if (!c.downed)
+            {
+                Attack(battlers[i], baseDamage);
+            }
         }
     }
     

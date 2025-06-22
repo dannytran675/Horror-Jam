@@ -7,8 +7,8 @@ public class Flont : CharacterInfo
     [SerializeField] private Cleric clericInstance;
     public void Awake()
     {
-        maxHP = 500;
-        hp = 500;
+        maxHP = 1000;
+        hp = maxHP;
         fam = 0;
         crit = 0.125f;
         usedMove = false;
@@ -21,6 +21,7 @@ public class Flont : CharacterInfo
         character.dmgMultiplier = 1.2f;
         usedMove = true;
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 
@@ -38,6 +39,7 @@ public class Flont : CharacterInfo
             knightInstance.IncreaseHP(knightInstance.maxHP / 10); //10% Max HP Healed
         }
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 
@@ -47,6 +49,7 @@ public class Flont : CharacterInfo
         character.crit *= 2;
         character.luckBoosted = true;
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 }

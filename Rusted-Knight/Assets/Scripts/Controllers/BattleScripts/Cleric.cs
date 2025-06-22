@@ -14,24 +14,25 @@ public class Cleric : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //heal
     {
-        if (belief >= 25)
+        if (belief >= 20)
         {
-            belief -= 25;
+            DecreaseBelief(20);
+
             character.IncreaseHP((character.maxHP / 10) * 3); //Healed for 30% Max HP
 
             usedMove = true;
-            belief -= 25;
         }
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
     public override void Move2(CharacterInfo character) //ray
     {
         SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
         
-        if (CanHit(acc) && belief >= 10)
+        if (CanHit(acc) && belief >= 12)
         {
-            belief -= 10;
+            DecreaseBelief(12);
 
             int damage = DamageDealt(150, IfCrit());
 
@@ -39,26 +40,28 @@ public class Cleric : CharacterInfo
             character.ReduceHP(damage);
 
             usedMove = true;
-            belief -= 10;
             ResetBoosts();
         }
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 
     public override void Move3(CharacterInfo character) //revive
     {
-        if (belief >= 65)
+        if (belief >= 50)
         {
+            DecreaseBelief(50);
+
             if (character.hp <= 0)
             {
                 character.downed = false;
                 character.SetHP(character.maxHP / 2); //Start with 50% Max HP
             }
-            belief -= 65;
             usedMove = true;
         }
         
+        ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss
     }
 

@@ -103,7 +103,7 @@ public class CharacterInfo : MonoBehaviour
             damage *= critMultiplier;
         }
 
-        int roundedDmg = (int) Mathf.Ceil(damage);
+        int roundedDmg = (int)Mathf.Ceil(damage);
         return roundedDmg;
     }
 
@@ -112,5 +112,10 @@ public class CharacterInfo : MonoBehaviour
         dmgMultiplier = 1;
         luckBoosted = false;
         crit = 0.125f;
+    }
+
+    public void ResetAccuracyDebuff()
+    {
+        accuracyDebuffed = false;
     }
 }

@@ -5032,15 +5032,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd2b9b71e9c0d848a1d8a7144956588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
-  hp: 1000
+  maxHP: 0
+  hp: 0
   fam: 0
   crit: 0.125
   rnd: 0
+  dmgMultiplier: 1
   acc: 0
+  luckBoosted: 0
+  accuracyDebuffed: 0
   guarded: 0
   usedMove: 0
   downed: 0
+  characterName: 
   move1CD: 0
   move2CD: 1
   move3CD: 3
@@ -7157,6 +7161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 990954767}
   - component: {fileID: 990954766}
+  - component: {fileID: 990954768}
   m_Layer: 0
   m_Name: DEMONKING
   m_TagString: Untagged
@@ -7235,6 +7240,35 @@ Transform:
   - {fileID: 1191948140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &990954768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990954765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f50665a6450f8147bfa9ee19e6a88f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 0
+  hp: 0
+  fam: 0
+  crit: 0
+  rnd: 0
+  dmgMultiplier: 1
+  acc: 0
+  luckBoosted: 0
+  accuracyDebuffed: 0
+  guarded: 0
+  usedMove: 0
+  downed: 0
+  characterName: 
+  battlers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1054519379
 GameObject:
   m_ObjectHideFlags: 0
@@ -8230,10 +8264,14 @@ MonoBehaviour:
   fam: 0
   crit: 0
   rnd: 0
+  dmgMultiplier: 1
   acc: 0
+  luckBoosted: 0
+  accuracyDebuffed: 0
   guarded: 0
   usedMove: 0
   downed: 0
+  characterName: 
   knightInstance: {fileID: 402582226}
   clericInstance: {fileID: 2135363105}
 --- !u!1 &1361805083
@@ -10295,10 +10333,14 @@ MonoBehaviour:
   fam: 0
   crit: 0
   rnd: 0
+  dmgMultiplier: 1
   acc: 0
+  luckBoosted: 0
+  accuracyDebuffed: 0
   guarded: 0
   usedMove: 0
   downed: 0
+  characterName: 
   belief: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
