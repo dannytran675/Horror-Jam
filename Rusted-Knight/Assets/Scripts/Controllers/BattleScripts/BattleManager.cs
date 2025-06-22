@@ -10,6 +10,9 @@ public class BattleManager : MonoBehaviour
     Knight rustedKnight;
     Cleric dena;
 
+    CharacterInfo denaTarget;
+    CharacterInfo flontTarget;
+
     [SerializeField] private Boss demonKing;
     [SerializeField] private TMP_Text[] HPTexts = new TMP_Text[3];
     [SerializeField] private TMP_Text bossHPText;
@@ -78,6 +81,10 @@ public class BattleManager : MonoBehaviour
             EnableAllButtons();
             yield return new WaitUntil(() => playerAttacked);
 
+            print("Player moves: ");
+            StartCoroutine(EndOfTurnSequence(2));
+            yield return new WaitForSeconds(6);
+
 
             //Boss turn
             print(ColourText.RedString("Boss turn"));
@@ -142,11 +149,18 @@ public class BattleManager : MonoBehaviour
 
         //String formatting
         string demonHPString = $"{demonKing.hp}";
-        if (demonKing.hp > 999)
-        {
-            demonHPString = $"{demonKing.hp / 1000} " + demonHPString.Substring(demonHPString.Length - 3);
-        }
+        // if (demonKing.hp > 999)
+        // {
+        //     demonHPString = $"{demonKing.hp / 1000} " + demonHPString.Substring(demonHPString.Length - 3);
+        // }
         bossHPText.SetText($"HP : {demonHPString}");
+    }
+
+    public void UpdateDisplay()
+    {
+        DisplayHPs();
+        DisplayDenaCosts();
+        DisplayKnightCD();
     }
 
 
@@ -319,6 +333,77 @@ public class BattleManager : MonoBehaviour
         for (int j = 0; j < 3; j++)
         {
             movesSelected[2, j] = false;
+        }
+    }
+
+    public IEnumerator EndOfTurnSequence(int delayBetweenMoves)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (movesSelected[i, j])
+                {
+                    MoveExecutionScenarios(i, j);
+                    UpdateDisplay();
+                    yield return new WaitForSeconds(delayBetweenMoves);
+                }
+            }
+        }
+    }
+
+    public void MoveExecutionScenarios(int characterIndex, int moveNum)
+    {
+        CharacterInfo battler = battlers[characterIndex];
+        //Knight's move executions
+        if (characterIndex == 0)
+        {
+            switch (moveNum)
+            {
+                case 0:
+                    battler.Move1(demonKing); //Guard
+                    break;
+                case 1:
+                    battler.Move2(demonKing); //Flurry
+                    break;
+                case 2:
+                    battler.Move3(demonKing); //Altrutistic Pierce
+                    break;
+            }
+        }
+
+        //Dena's move executions
+        else if (characterIndex == 1)
+        {
+            switch (moveNum)
+            {
+                case 0:
+                    battler.Move1(denaTarget); //Bless
+                    break;
+                case 1:
+                    battler.Move2(demonKing); //Surpress
+                    break;
+                case 2:
+                    battler.Move3(denaTarget); //Necromance
+                    break;
+            }
+        }
+
+        //Flont's move executions
+        else if (characterIndex == 2)
+        {
+            switch (moveNum)
+            {
+                case 0:
+                    battler.Move1(flontTarget); //Bless
+                    break;
+                case 1:
+                    battler.Move2(demonKing); //Surpress
+                    break;
+                case 2:
+                    battler.Move3(flontTarget); //Necromance
+                    break;
+            }
         }
     }
 

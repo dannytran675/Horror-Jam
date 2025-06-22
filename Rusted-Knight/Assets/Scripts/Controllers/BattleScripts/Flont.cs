@@ -17,8 +17,13 @@ public class Flont : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //atk boost
     {
-        character.ReduceHP(character.maxHP / 10);//10% Max HP Removed
-        character.dmgMultiplier = 1.2f;
+        print("Coagulation!");
+        if (character != null)
+        {
+            character.ReduceHP(character.maxHP / 10);//10% Max HP Removed
+            character.dmgMultiplier = 1.2f;
+        }
+        
         usedMove = true;
         
         ResetAccuracyDebuff();
@@ -27,6 +32,7 @@ public class Flont : CharacterInfo
 
     public override void Move2(CharacterInfo character) //heal
     {
+        print("Revitalize!");
         ReduceHP(maxHP / 10); //10% Max HP Removed
         if (clericInstance != null)
         {
@@ -45,9 +51,13 @@ public class Flont : CharacterInfo
 
     public override void Move3(CharacterInfo character) //lucky
     {
-        character.ReduceHP(character.maxHP / 5); //20% Max HP Removed
-        character.crit *= 2;
-        character.luckBoosted = true;
+        print("Adrenalin!");
+        if (character != null)
+        {
+            character.ReduceHP(character.maxHP / 5); //20% Max HP Removed
+            character.crit *= 2;
+            character.luckBoosted = true;
+        }
         
         ResetAccuracyDebuff();
         AddFam(); //Increases Fam Regardless of Hit or Miss

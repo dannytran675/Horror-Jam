@@ -21,11 +21,14 @@ public class Cleric : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //heal
     {
+        print("Bless!");
         if (belief >= beliefCost1)
         {
             DecreaseBelief(beliefCost1);
-
-            character.IncreaseHP((character.maxHP / 10) * 3); //Healed for 30% Max HP
+            if (character != null)
+            {
+                character.IncreaseHP((character.maxHP / 10) * 3); //Healed for 30% Max HP
+            }
 
             usedMove = true;
         }
@@ -35,6 +38,7 @@ public class Cleric : CharacterInfo
     }
     public override void Move2(CharacterInfo character) //ray
     {
+        print("Surpress!");
         SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
         
         if (CanHit(acc) && belief >= beliefCost2)
@@ -44,7 +48,10 @@ public class Cleric : CharacterInfo
             int damage = DamageDealt(150, IfCrit());
 
             //Attacking
-            character.ReduceHP(damage);
+            if (character != null)
+            {
+                character.ReduceHP(damage);
+            }
 
             usedMove = true;
             ResetBoosts();
@@ -56,11 +63,12 @@ public class Cleric : CharacterInfo
 
     public override void Move3(CharacterInfo character) //revive
     {
+        print("Necromance!");
         if (belief >= beliefCost3)
         {
             DecreaseBelief(beliefCost3);
 
-            if (character.hp <= 0)
+            if (character != null && character.hp <= 0)
             {
                 character.downed = false;
                 character.SetHP(character.maxHP / 2); //Start with 50% Max HP
