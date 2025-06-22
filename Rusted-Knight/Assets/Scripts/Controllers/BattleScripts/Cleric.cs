@@ -27,7 +27,20 @@ public class Cleric : CharacterInfo
             DecreaseBelief(beliefCost1);
             if (character != null)
             {
-                character.IncreaseHP((character.maxHP / 10) * 3); //Healed for 30% Max HP
+                int heal = (character.maxHP / 10) * 3;
+                int hpBef = character.hp;
+                character.IncreaseHP(heal); //Healed for 30% Max HP
+                heal = character.hp - hpBef;
+                bool healed = (heal > 0);
+                if (healed)
+                {
+                    print($"{characterName} healed {character.characterName} for {heal} health");
+                }
+                else
+                {
+                    heal = (character.maxHP / 10) * 3;
+                    print($"{characterName} tried to heal {character.characterName} for {heal} health. But they're too healthy!");
+                }
             }
 
             usedMove = true;
@@ -79,6 +92,7 @@ public class Cleric : CharacterInfo
             {
                 character.downed = false;
                 character.SetHP(character.maxHP / 2); //Start with 50% Max HP
+                print($"{characterName} revived {character.characterName} to half health!");
             }
             usedMove = true;
         }
@@ -109,9 +123,11 @@ public class Cleric : CharacterInfo
         {
             return;
         }
-        else if (belief - beliefDecrease < 0)
+        else if (belief - beliefDecrease <= 0)
         {
             belief = 0;
+            downed = true;
+            print("Dena has lost all hope. She has given up.");
         }
         else
         {

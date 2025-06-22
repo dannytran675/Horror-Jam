@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using System.Threading.Tasks;
 
 public class BattleManager : MonoBehaviour
 {
@@ -32,7 +33,10 @@ public class BattleManager : MonoBehaviour
     bool playerAttacked;
 
     private bool[,] movesSelected = new bool[3, 3];
+    private bool singleTurnExecuted;
     private bool turnsExecuted;
+
+    private bool awaitingPlayerSelectDena, awaitingPlayerSelectFlont;
 
 
     void Start()
@@ -102,8 +106,11 @@ public class BattleManager : MonoBehaviour
 
             //Boss turn
             print(ColourText.RedString("Boss turn"));
-            
+
             yield return new WaitForSeconds(2);
+            demonKing.BossTurn();
+            yield return new WaitForSeconds(2);
+            UpdateDisplay();
 
             //Switching turns;
             playerAttacked = false;
@@ -346,12 +353,29 @@ public class BattleManager : MonoBehaviour
     }
 
     //Dena Move Buttons
+    public void BlessTargetSelect()
+    {
+        awaitingPlayerSelectDena = true;
+        EnablePlayerButtons();
+        DisableMoveButtons();
+        DisableEndTurnButton();
+        print("Click on the character you want to Bless");
+    }
+
+    public void ExitTargetSelect()
+    {
+        DisablePlayerButtons();
+        EnableMoveButtons();
+        UpdateMoveButtons(); //Ensure no cooldowned moves are enabled
+        EnableEndTurnButton();
+    }
 
     public void BlessButton()
     {
         ResetButtonTextsDena();
         buttonTexts[3].SetText(ColourText.GreenString("Bless"));
         movesSelected[1, 0] = true;
+        BlessTargetSelect();
     }
 
     public void SurpressButton()
@@ -423,10 +447,11 @@ public class BattleManager : MonoBehaviour
             {
                 if (movesSelected[i, j])
                 {
+                    singleTurnExecuted = false;
                     characterMoved = true;
-                    MoveExecutionScenarios(i, j);
+                    StartCoroutine(MoveExecutionScenariosCoroutine(i, j, delayBetweenMoves));
                     UpdateDisplay();
-                    yield return new WaitForSeconds(delayBetweenMoves);
+                    yield return new WaitUntil(() => singleTurnExecuted);
                 }
             }
             if (i == 0 && !characterMoved)
@@ -435,10 +460,10 @@ public class BattleManager : MonoBehaviour
                 UpdateDisplay();
             }
         }
-        turnsExecuted =  true;
+        turnsExecuted = true;
     }
 
-    public void MoveExecutionScenarios(int characterIndex, int moveNum)
+    public IEnumerator MoveExecutionScenariosCoroutine(int characterIndex, int moveNum, int delay)
     {
         CharacterInfo battler = battlers[characterIndex];
         //Knight's move executions
@@ -491,8 +516,29 @@ public class BattleManager : MonoBehaviour
                     break;
             }
         }
+        yield return new WaitForSeconds(delay);
+        singleTurnExecuted = true;
     }
 
-    
+    //Player Select Buttons
+
+    public void KnightPlayerSelect()
+    {
+        if (awaitingPlayerSelectDena)
+        {
+            denaTarget = battlers[0];
+            awaitingPlayerSelectDena = false;
+            print($"Dena will Bless {denaTarget.characterName}.");
+            ExitTargetSelect();
+        }
+        else if (awaitingPlayerSelectFlont)
+        {
+            flontTarget = battlers[0];
+            awaitingPlayerSelectFlont = false;
+            ExitTargetSelect();
+        }
+
+    }
+
 
 }

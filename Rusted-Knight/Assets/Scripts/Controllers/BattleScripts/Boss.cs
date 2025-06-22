@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Boss : CharacterInfo
 {
@@ -13,7 +14,7 @@ public class Boss : CharacterInfo
     void Awake()
     {
         // Set the inherited field values here instead
-        maxHP = 40000;
+        maxHP = 4000;
         hp = maxHP;
         fam = 0;
         crit = 0.125f;
@@ -50,6 +51,7 @@ public class Boss : CharacterInfo
         else if (rollMove < 0.5f) // 4, 5
         {
             target.accuracyDebuffed = true; //Debuffing stat is handled on character's side
+            print($"{characterName} reduced the accuracy of {target.characterName}'s next move by 3!");
         }
         else if (rollMove < 0.7f) // 6, 7
         {
@@ -74,18 +76,19 @@ public class Boss : CharacterInfo
 
             if (character.guarded)
             {
-                Debug.Log($"{characterName} tried to hit {character.characterName} for {damage} damage but was blocked");
+                print($"{characterName} tried to hit {character.characterName} for {damage} damage but was blocked");
+                character.guarded = false;
             }
             else
             {
                 character.ReduceHP(damage);
-                Debug.Log($"{characterName} hit {character.characterName} for {damage} damage!");
+                print($"{characterName} hit {character.characterName} for {damage} damage!");
             }
 
         }
         else
         {
-            Debug.Log($"{characterName} tried to attack a dead person...");
+            print($"{characterName} tried to attack a dead person...");
         }
     }
 

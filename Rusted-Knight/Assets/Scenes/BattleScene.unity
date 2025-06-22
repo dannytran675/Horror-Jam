@@ -7402,9 +7402,9 @@ MonoBehaviour:
   downed: 0
   characterName: 
   battlers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 402582226}
+  - {fileID: 2135363105}
+  - {fileID: 1351795839}
 --- !u!1 &1054519379
 GameObject:
   m_ObjectHideFlags: 0
