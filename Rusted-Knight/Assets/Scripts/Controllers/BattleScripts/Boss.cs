@@ -13,7 +13,7 @@ public class Boss : CharacterInfo
     void Awake()
     {
         // Set the inherited field values here instead
-        maxHP = 50000;
+        maxHP = 40000;
         hp = maxHP;
         fam = 0;
         crit = 0.125f;

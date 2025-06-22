@@ -13,6 +13,10 @@ public class CharacterInfo : MonoBehaviour
     public bool guarded, usedMove, downed;
     public string characterName;
 
+    public void print(string s)
+    {
+        TextInstantiator.Instance.AddText(s);
+    }
     public virtual void Move1(CharacterInfo character)
     {
 

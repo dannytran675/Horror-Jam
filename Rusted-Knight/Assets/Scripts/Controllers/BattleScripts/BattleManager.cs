@@ -9,7 +9,10 @@ public class BattleManager : MonoBehaviour
 
     Knight rustedKnight;
     Cleric dena;
+
+    [SerializeField] private Boss demonKing;
     [SerializeField] private TMP_Text[] HPTexts = new TMP_Text[3];
+    [SerializeField] private TMP_Text bossHPText;
 
     //For all cooldowns or percentages
     [SerializeField] private TMP_Text[] CDTexts = new TMP_Text[9];
@@ -21,6 +24,8 @@ public class BattleManager : MonoBehaviour
 
     //Belief text
     [SerializeField] private TMP_Text beliefText;
+
+    bool playerAttacked;
 
 
     void Start()
@@ -44,27 +49,58 @@ public class BattleManager : MonoBehaviour
         CDTexts[8].SetText("[0]");
 
         DisableAllButtons();
-        print("Welcome to the battle sequence!");
+        //Adding functionality to end turn button
+        endTurnButton.onClick.AddListener(() => playerAttacked = true);
 
+        print("Welcome to the battle sequence!");
+        StartCoroutine(BattleSequence());
 
     }
 
     //Battle!
-    // public IEnumerator BattleSequence()
-    // {
+    public IEnumerator BattleSequence()
+    {
+        yield return new WaitForSeconds(2);
+        print("Please click on the moves you want each character to perfom.");
+        yield return new WaitForSeconds(2);
+        print("To confirm the actions, please press the end turn button.");
+        yield return new WaitForSeconds(2);
 
-    // }
+        //Battle loop
+        while (canBattle())
+        {
+
+            //Player turn
+            print(ColourText.BlueString("Player turn"));
+            EnableAllButtons();
+            yield return new WaitUntil(() => playerAttacked);
+
+
+            //Boss turn
+            print(ColourText.RedString("Boss turn"));
+            DisableAllButtons();
+            yield return new WaitForSeconds(2);
+
+            //Switching turns;
+            playerAttacked = false;
+
+        }
+
+
+    }
 
     public bool canBattle()
     {
-        bool canBattle = true;
+        bool allDowned = battlers[0].downed && battlers[1].downed && battlers[2].downed;
 
-        for (int i = 0; i < battlers.Length; i++)
-        {
+        bool bossDowned = demonKing.downed;
 
-        }
+        bool canBattle = !allDowned && !bossDowned;
+
         return canBattle;
     }
+
+    //Button interactions
 
 
 
@@ -100,6 +136,14 @@ public class BattleManager : MonoBehaviour
         HPTexts[0].SetText($"HP : {battlers[0].hp}");
         HPTexts[1].SetText($"HP : {battlers[1].hp}");
         HPTexts[2].SetText($"HP : {battlers[2].hp}");
+
+        //String formatting
+        string demonHPString = $"{demonKing.hp}";
+        if (demonKing.hp > 999)
+        {
+            demonHPString = $"{demonKing.hp / 1000} " + demonHPString.Substring(demonHPString.Length - 3);
+        }
+        bossHPText.SetText($"HP : {demonHPString}");
     }
 
 
@@ -173,5 +217,6 @@ public class BattleManager : MonoBehaviour
     {
         endTurnButton.interactable = true;
     }
+    
 
 }
