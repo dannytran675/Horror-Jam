@@ -22,6 +22,11 @@ MonoBehaviour:
   - "I just want to get my paws on it\u2026 all of it!"
   - "Quick, please! Let\u2019s go kill him now!"
   - Now!
+  - ...
+  - What do you mean you've forgotten how to fight?
+  - Don't tell me fighting all those weak monsters for so long has gotten you rusty!
+  - It's the final boss now!
+  - Bring him your all, I've seen what you can do.
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1
