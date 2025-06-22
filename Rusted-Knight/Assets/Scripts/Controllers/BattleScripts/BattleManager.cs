@@ -220,6 +220,108 @@ public class BattleManager : MonoBehaviour
     {
         endTurnButton.interactable = true;
     }
+
+    //Knight Move Buttons
+    public void GuardianButton()
+    {
+        ResetButtonTextsKnight();
+        buttonTexts[0].SetText(ColourText.GreenString("Guardian"));
+        movesSelected[0, 0] = true;
+    }
+
+    public void FlurryButton()
+    {
+        ResetButtonTextsKnight();
+        buttonTexts[1].SetText(ColourText.GreenString("Flurry"));
+        movesSelected[0, 1] = true;
+    }
+
+    public void AltrutisticPierceButton()
+    {
+        ResetButtonTextsKnight();
+        buttonTexts[2].SetText(ColourText.GreenString("Altrutistic Pierce"));
+        movesSelected[0, 2] = true;
+    }
+
+    public void ResetButtonTextsKnight()
+    {
+        buttonTexts[0].SetText("Guardian");
+        buttonTexts[1].SetText("Flurry");
+        buttonTexts[2].SetText("Altrutistic Pierce");
+        for (int j = 0; j < 3; j++)
+        {
+            movesSelected[0, j] = false;
+        }
+    }
+
+    //Dena Move Buttons
+
+    public void BlessButton()
+    {
+        ResetButtonTextsDena();
+        buttonTexts[3].SetText(ColourText.GreenString("Bless"));
+        movesSelected[1, 0] = true;
+    }
+
+    public void SurpressButton()
+    {
+        ResetButtonTextsDena();
+        buttonTexts[4].SetText(ColourText.GreenString("Surpress"));
+        movesSelected[1, 1] = true;
+    }
+
+    public void NecromanceButton()
+    {
+        ResetButtonTextsDena();
+        buttonTexts[5].SetText(ColourText.GreenString("Necromance"));
+        movesSelected[1, 2] = true;
+    }
+
+    public void ResetButtonTextsDena()
+    {
+        buttonTexts[3].SetText("Bless");
+        buttonTexts[4].SetText("Surpress");
+        buttonTexts[5].SetText("Necromance");
+        for (int j = 0; j < 3; j++)
+        {
+            movesSelected[1, j] = false;
+        }
+    }
+
+    //Flont Move Buttons
+
+    public void CoagulationButton()
+    {
+        ResetButtonTextsFlont();
+        buttonTexts[6].SetText(ColourText.GreenString("Coagulation"));
+        movesSelected[2, 0] = true;
+    }
+
+    public void RevitalizeButton()
+    {
+        ResetButtonTextsFlont();
+        buttonTexts[7].SetText(ColourText.GreenString("Revitalize"));
+        movesSelected[2, 1] = true;
+    }
+
+    public void AdrenalinButton()
+    {
+        ResetButtonTextsFlont();
+        buttonTexts[8].SetText(ColourText.GreenString("Adrenalin"));
+        movesSelected[2, 2] = true;
+    }
+
+    public void ResetButtonTextsFlont()
+    {
+        buttonTexts[6].SetText("Coagulation");
+        buttonTexts[7].SetText("Revitalize");
+        buttonTexts[8].SetText("Adrenalin");
+        for (int j = 0; j < 3; j++)
+        {
+            movesSelected[2, j] = false;
+        }
+    }
+
     
 
 }
