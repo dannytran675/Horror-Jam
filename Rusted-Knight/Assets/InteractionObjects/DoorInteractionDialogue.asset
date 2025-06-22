@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8858d5c92e9d2914bb34eaa6b8cfb6a3, type: 3}
   m_Name: DoorInteractionDialogue
   m_EditorClassIdentifier: 
-  npcName: System
+  npcName: Church
   npcPortrait: {fileID: 0}
   dialogueLines:
   - You sense the holy spirit watching over you.
