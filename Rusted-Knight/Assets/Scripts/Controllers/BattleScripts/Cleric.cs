@@ -21,7 +21,6 @@ public class Cleric : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //heal
     {
-        print("Bless!");
         if (belief >= beliefCost1)
         {
             DecreaseBelief(beliefCost1);

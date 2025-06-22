@@ -98,9 +98,7 @@ public class BattleManager : MonoBehaviour
 
             print("Player moves: ");
             StartCoroutine(EndOfTurnSequence(2));
-            Debug.Log(turnsExecuted);
             yield return new WaitUntil(() => turnsExecuted);
-            Debug.Log("hi");
             //Deselect all buttons
             ResetAllMoveButtonSelections();
 
@@ -359,7 +357,7 @@ public class BattleManager : MonoBehaviour
         EnablePlayerButtons();
         DisableMoveButtons();
         DisableEndTurnButton();
-        print("Click on the character you want to Bless");
+        print("Click on the icon of thecharacter you want to Bless");
     }
 
     public void ExitTargetSelect()
@@ -534,6 +532,42 @@ public class BattleManager : MonoBehaviour
         else if (awaitingPlayerSelectFlont)
         {
             flontTarget = battlers[0];
+            awaitingPlayerSelectFlont = false;
+            ExitTargetSelect();
+        }
+
+    }
+
+    public void DenaPlayerSelect()
+    {
+        if (awaitingPlayerSelectDena)
+        {
+            denaTarget = battlers[1];
+            awaitingPlayerSelectDena = false;
+            print($"Dena will Bless herself.");
+            ExitTargetSelect();
+        }
+        else if (awaitingPlayerSelectFlont)
+        {
+            flontTarget = battlers[1];
+            awaitingPlayerSelectFlont = false;
+            ExitTargetSelect();
+        }
+
+    }
+
+    public void FlontPlayerSelect()
+    {
+        if (awaitingPlayerSelectDena)
+        {
+            denaTarget = battlers[2];
+            awaitingPlayerSelectDena = false;
+            print($"Dena will Bless {denaTarget.characterName}.");
+            ExitTargetSelect();
+        }
+        else if (awaitingPlayerSelectFlont)
+        {
+            flontTarget = battlers[2];
             awaitingPlayerSelectFlont = false;
             ExitTargetSelect();
         }
