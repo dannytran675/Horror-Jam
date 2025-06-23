@@ -13,7 +13,7 @@ public class Cleric : CharacterInfo
         crit = 0.125f;
         usedMove = false;
         downed = false;
-        characterName = "Dena";
+        characterName = ColourText.DenaColourString("Dena");
         belief = 50;
         beliefCost1 = 20;
         beliefCost2 = 12;
@@ -33,7 +33,7 @@ public class Cleric : CharacterInfo
                 bool healed = (heal > 0);
                 if (healed)
                 {
-                    print($"{characterName} healed {character.characterName} for {heal} health");
+                    print($"{characterName} healed {character.characterName} for {heal} health using Bless");
                 }
                 else
                 {
@@ -62,8 +62,8 @@ public class Cleric : CharacterInfo
             //Attacking
             if (character != null)
             {
-                character.ReduceHP(damage);
                 print($"{characterName} dealt {damage} damage to {character.characterName} using Surpress!");
+                character.ReduceHP(damage);
             }
 
             usedMove = true;
@@ -112,12 +112,12 @@ public class Cleric : CharacterInfo
         {
             int effectiveGain = 100 - belief;
             belief = 100;
-            print($"{characterName} gained {effectiveGain}% belief.");
+            print(ColourText.GrayString($"{characterName} gained {effectiveGain}% belief."));
         }
         else
         {
             belief += beliefIncrease;
-            print($"{characterName} gained {beliefIncrease}% belief.");
+            print(ColourText.GrayString($"{characterName} gained {beliefIncrease}% belief."));
         }
     }
 
@@ -132,12 +132,12 @@ public class Cleric : CharacterInfo
             belief = 0;
             hp = 0;
             downed = true;
-            print("Dena has lost all hope. She has given up.");
+            print(ColourText.DarkRedString("Dena has lost all hope. She has given up."));
         }
         else
         {
             belief -= beliefDecrease;
-            print($"{characterName} has lost {beliefDecrease}% belief.");
+            print(ColourText.GrayString($"{characterName} has lost {beliefDecrease}% belief."));
         }
     }
 

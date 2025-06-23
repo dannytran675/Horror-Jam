@@ -12,7 +12,7 @@ public class Knight : CharacterInfo
         crit = 0.125f;
         usedMove = false;
         downed = false;
-        characterName = "The Knight";
+        characterName = ColourText.KnightColourString("The Knight");
         move1CD = 0;
         move2CD = 1;
         move3CD = 3;
@@ -44,8 +44,8 @@ public class Knight : CharacterInfo
             //Attacking
             if (character != null)
             {
-                character.ReduceHP(damage);
                 print($"{characterName} dealt {damage} damage to {character.characterName}!");
+                character.ReduceHP(damage);
             }
 
             usedMove = true;
@@ -79,8 +79,8 @@ public class Knight : CharacterInfo
             //Attacking
             if (character != null)
             {
-                character.ReduceHP(damage);
                 print($"{characterName} dealt {damage} damage to {character.characterName}!");
+                character.ReduceHP(damage);
             }
 
 

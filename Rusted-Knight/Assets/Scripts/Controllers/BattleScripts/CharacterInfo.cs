@@ -45,7 +45,7 @@ public class CharacterInfo : MonoBehaviour
             this.hp -= hp;
             if (this.hp <= 0)
             {
-                print($"{characterName} died...");
+                print(ColourText.DarkRedString($"{characterName} died..."));
                 this.hp = 0;
                 downed = true;
             }

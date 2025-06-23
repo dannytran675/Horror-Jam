@@ -13,7 +13,7 @@ public class Flont : CharacterInfo
         crit = 0.125f;
         usedMove = false;
         downed = false;
-        characterName = "Flont";
+        characterName = ColourText.FlontColourString("Flont");
     }
     public override void Move1(CharacterInfo character) //atk boost
     {

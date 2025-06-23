@@ -23,7 +23,7 @@ public class Boss : CharacterInfo
         dmgMultiplier = 1;
         usedMove = false;
         downed = false;
-        characterName = "The Demon King";
+        characterName = ColourText.BossColourString("The Demon King");
     }
 
     public void FindTarget()
@@ -94,11 +94,11 @@ public class Boss : CharacterInfo
             {
                 print($"{characterName} hit {character.characterName} for {damage} damage!");
                 character.ReduceHP(damage);
-                if (character.downed)
+                if (character.downed && !dena.downed)
                 {
                     dena.DecreaseBelief(dena.belief / 2);
                 }
-                else
+                else if (!dena.downed)
                 {
                     dena.DecreaseBelief(5);
                 }

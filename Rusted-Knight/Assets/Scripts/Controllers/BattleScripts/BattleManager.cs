@@ -11,6 +11,8 @@ public class BattleManager : MonoBehaviour
     Knight rustedKnight;
     Cleric dena;
 
+    string denaName, flontName;
+
     CharacterInfo denaTarget;
     CharacterInfo flontTarget;
 
@@ -39,12 +41,15 @@ public class BattleManager : MonoBehaviour
     private bool awaitingPlayerSelectDena, awaitingPlayerSelectFlont;
     private bool startingNecromance;
 
+    public bool bossDowned;
+
 
     void Start()
     {
         rustedKnight = battlers[0] as Knight;
         dena = battlers[1] as Cleric;
-
+        denaName = dena.characterName;
+        flontName = battlers[2].characterName;
         DisplayHPs();
 
         beliefText.SetText($"Belief: {dena.belief}%");
@@ -109,16 +114,29 @@ public class BattleManager : MonoBehaviour
             }
 
             //Boss turn
-            print(ColourText.RedString("Boss turn"));
+            if (!demonKing.downed)
+            {
+                print(ColourText.RedString("Boss turn"));
 
-            yield return new WaitForSeconds(2);
-            demonKing.BossTurn();
-            yield return new WaitForSeconds(2);
-            UpdateDisplay();
+                yield return new WaitForSeconds(2);
+                demonKing.BossTurn();
+                yield return new WaitForSeconds(2);
+                UpdateDisplay();
+            }
+            
 
             //Switching turns;
             playerAttacked = false;
 
+        }
+
+        if (bossDowned)
+        {
+            //Transition code
+            GameManager.Instance.FadeInSceneTransition();
+            yield return new WaitForSeconds(2);
+            GameManager.Instance.LoadScene();
+            GameManager.Instance.FadeOutSceneTransition();
         }
 
 
@@ -128,7 +146,7 @@ public class BattleManager : MonoBehaviour
     {
         bool allDowned = battlers[0].downed && battlers[1].downed && battlers[2].downed;
 
-        bool bossDowned = demonKing.downed;
+        bossDowned = demonKing.downed;
 
         bool canBattle = !allDowned && !bossDowned;
 
@@ -563,7 +581,7 @@ public class BattleManager : MonoBehaviour
         {
             characterSelectButtons[1].interactable = false;
         }
-        if (!battlers[0].downed && !battlers[1].downed)
+        if (!battlers[0].downed || !battlers[1].downed)
         {
             DisableMoveButtons();
             DisableEndTurnButton();
@@ -625,11 +643,11 @@ public class BattleManager : MonoBehaviour
                     StartCoroutine(MoveExecutionScenariosCoroutine(i, j, delayBetweenMoves));
                     UpdateDisplay();
                     yield return new WaitUntil(() => singleTurnExecuted);
-                    if (battlers[i].critLanded)
+                    if (!dena.downed && battlers[i].critLanded && battlers[i].usedMove)
                     {
                         dena.IncreaseBelief(20);
                     }
-                    else
+                    else if (!dena.downed && battlers[i].usedMove)
                     {
                         dena.IncreaseBelief(10);
                     }
@@ -641,6 +659,12 @@ public class BattleManager : MonoBehaviour
                 rustedKnight.CDUpdate(-1);
                 UpdateDisplay();
             }
+        }
+
+        //Resetting the status for next turn;
+        for (int i = 0; i < 3; i++)
+        {
+            battlers[i].usedMove = false;
         }
         turnsExecuted = true;
     }
@@ -712,11 +736,11 @@ public class BattleManager : MonoBehaviour
             awaitingPlayerSelectDena = false;
             if (startingNecromance)
             {
-                print($"Dena will bring back {denaTarget.characterName}");
+                print($"{denaName} will bring back {denaTarget.characterName}");
             }
             else
             {
-                print($"Dena will Bless {denaTarget.characterName}.");
+                print($"{denaName} will Bless {denaTarget.characterName}.");
             }
             ExitTargetSelect();
         }
@@ -724,7 +748,7 @@ public class BattleManager : MonoBehaviour
         {
             flontTarget = battlers[0];
             awaitingPlayerSelectFlont = false;
-            print($"Flont will target {flontTarget.characterName}.");
+            print($"{flontName} will target {flontTarget.characterName}.");
             ExitTargetSelect();
         }
 
@@ -738,11 +762,11 @@ public class BattleManager : MonoBehaviour
             awaitingPlayerSelectDena = false;
             if (startingNecromance)
             {
-                print($"Dena will bring back {denaTarget.characterName}");
+                print($"{denaName} will bring back {denaTarget.characterName}");
             }
             else
             {
-                print($"Dena will Bless {denaTarget.characterName}.");
+                print($"{denaName} will Bless {denaTarget.characterName}.");
             }
             ExitTargetSelect();
         }
@@ -750,7 +774,7 @@ public class BattleManager : MonoBehaviour
         {
             flontTarget = battlers[1];
             awaitingPlayerSelectFlont = false;
-            print($"Flont will target {flontTarget.characterName}.");
+            print($"{flontName} will target {flontTarget.characterName}.");
             ExitTargetSelect();
         }
 
@@ -764,11 +788,11 @@ public class BattleManager : MonoBehaviour
             awaitingPlayerSelectDena = false;
             if (startingNecromance)
             {
-                print($"Dena will bring back {denaTarget.characterName}");
+                print($"{denaName} will bring back {denaTarget.characterName}");
             }
             else
             {
-                print($"Dena will Bless {denaTarget.characterName}.");
+                print($"{denaName} will Bless {denaTarget.characterName}.");
             }
             ExitTargetSelect();
         }
@@ -776,7 +800,7 @@ public class BattleManager : MonoBehaviour
         {
             flontTarget = battlers[2];
             awaitingPlayerSelectFlont = false;
-            print($"Flont will target {flontTarget.characterName}.");
+            print($"{flontName} will target {flontTarget.characterName}.");
             ExitTargetSelect();
         }
 
