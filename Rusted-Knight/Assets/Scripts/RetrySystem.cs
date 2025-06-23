@@ -93,7 +93,7 @@ public class RetrySystem : NPC
         Debug.Log("Player retried.");
         yield return new WaitForSeconds(delay);
         GameManager.Instance.FadeOutSceneTransition();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("BattleScene");
     }
     public void YesInteraction()
     {
