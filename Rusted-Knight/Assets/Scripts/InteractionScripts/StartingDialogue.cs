@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StartingDialogue : NPC
 {
@@ -14,7 +15,11 @@ public class StartingDialogue : NPC
         }
         if (sceneChange)
         {
-            GameManager.Instance.LoadScene();
+            if (SceneManager.GetActiveScene().buildIndex != 7)
+            {
+               GameManager.Instance.LoadScene(); 
+            }
+            sceneChange = false;
             GameManager.Instance.FadeOutSceneTransition();
         }
     }
