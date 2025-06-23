@@ -1,7 +1,7 @@
 using UnityEngine;
 public class Knight : CharacterInfo
 {
-    public int move1CD = 0, move2CD = 1, move3CD = 3;
+    public int move1CD = 0, move2CD = 1, move3CD = 2;
 
     void Awake()
     {
@@ -15,7 +15,7 @@ public class Knight : CharacterInfo
         characterName = ColourText.KnightColourString("The Knight");
         move1CD = 0;
         move2CD = 1;
-        move3CD = 3;
+        move3CD = 2;
     }
     public override void Move1(CharacterInfo character) //guard
     {
@@ -123,7 +123,7 @@ public class Knight : CharacterInfo
         else if (moveNum == 2)
         {
             Debug.Log("Move3");
-            move3CD = 3;
+            move3CD = 2;
             if (move1CD > 0) move1CD -= 1;
             if (move2CD > 0) move2CD -= 1;
         }
