@@ -56,9 +56,7 @@ public class BattleManager : MonoBehaviour
         DisplayDenaCosts();
 
         //Flont all set to 0 since it costs HP
-        CDTexts[6].SetText("[0]");
-        CDTexts[7].SetText("[0]");
-        CDTexts[8].SetText("[0]");
+        DisplayFlontCosts();
 
         DisableAllButtons();
         //Adding functionality to end turn button
@@ -156,23 +154,67 @@ public class BattleManager : MonoBehaviour
     public void DisplayKnightCD()
     {
         //Knight Cooldowns
-        CDTexts[0].SetText($"[{rustedKnight.move1CD}]");
-        CDTexts[1].SetText($"[{rustedKnight.move2CD}]");
-        CDTexts[2].SetText($"[{rustedKnight.move3CD}]");
+        if (rustedKnight.downed)
+        {
+            CDTexts[0].SetText(ColourText.RedString($"[{rustedKnight.move1CD}]"));
+            CDTexts[1].SetText(ColourText.RedString($"[{rustedKnight.move2CD}]"));
+            CDTexts[2].SetText(ColourText.RedString($"[{rustedKnight.move3CD}]"));
+        }
+        else
+        {
+            CDTexts[0].SetText($"[{rustedKnight.move1CD}]");
+            CDTexts[1].SetText($"[{rustedKnight.move2CD}]");
+            CDTexts[2].SetText($"[{rustedKnight.move3CD}]");
+        }
+        
     }
 
     public void DisplayDenaCosts()
     {
-        CDTexts[3].SetText($"[{dena.beliefCost1}%]");
-        CDTexts[4].SetText($"[{dena.beliefCost2}%]");
-        CDTexts[5].SetText($"[{dena.beliefCost3}%]");
+        if (dena.downed)
+        {
+            CDTexts[3].SetText(ColourText.RedString($"[{dena.beliefCost1}%]"));
+            CDTexts[4].SetText(ColourText.RedString($"[{dena.beliefCost2}%]"));
+            CDTexts[5].SetText(ColourText.RedString($"[{dena.beliefCost3}%]"));
+        }
+        else
+        {
+            CDTexts[3].SetText($"[{dena.beliefCost1}%]");
+            CDTexts[4].SetText($"[{dena.beliefCost2}%]");
+            CDTexts[5].SetText($"[{dena.beliefCost3}%]");
+        }
+    }
+
+    public void DisplayFlontCosts()
+    {
+        string cost = "[0]";
+        if (battlers[2].downed)
+        {
+            cost = ColourText.RedString(cost);
+        }
+        else
+        {
+            cost = ColourText.GreenString(cost);
+        }
+        CDTexts[6].SetText(cost);
+        CDTexts[7].SetText(cost);
+        CDTexts[8].SetText(cost);
     }
 
     public void DisplayHPs()
     {
-        HPTexts[0].SetText($"HP : {battlers[0].hp}");
-        HPTexts[1].SetText($"HP : {battlers[1].hp}");
-        HPTexts[2].SetText($"HP : {battlers[2].hp}");
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (battlers[i].downed)
+            {
+                HPTexts[i].SetText(ColourText.RedString($"HP : {battlers[i].hp}"));
+            }
+            else
+            {
+                HPTexts[i].SetText($"HP : {battlers[i].hp}");
+            }
+        }
 
         //String formatting
         string demonHPString = $"{demonKing.hp}";
@@ -183,12 +225,25 @@ public class BattleManager : MonoBehaviour
         bossHPText.SetText($"HP : {demonHPString}");
     }
 
+    public void DisplayBelief()
+    {
+        if (dena.downed)
+        {
+            beliefText.SetText(ColourText.RedString($"Belief: {dena.belief}%"));
+        }
+        else
+        {
+            beliefText.SetText($"Belief: {dena.belief}%");
+        }
+    }
+
     public void UpdateDisplay()
     {
         DisplayHPs();
         DisplayDenaCosts();
         DisplayKnightCD();
-        beliefText.SetText($"Belief: {dena.belief}%");
+        DisplayFlontCosts();
+        DisplayBelief();
     }
 
 
@@ -263,6 +318,20 @@ public class BattleManager : MonoBehaviour
     {
         KnightButtonEnabler();
         DenaButtonEnabler();
+        DisableDownedButtons();
+    }
+
+    public void DisableDownedButtons()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (battlers[i].downed)
+            {
+                moveButtons[0 + 3 * i].interactable = false;
+                moveButtons[1 + 3 * i].interactable = false;
+                moveButtons[2 + 3 * i].interactable = false;
+            }
+        }
     }
 
     public void ResetAllMoveButtonSelections()
@@ -366,6 +435,13 @@ public class BattleManager : MonoBehaviour
         if (!startingNecromance)
         {
             EnablePlayerButtons();
+            for (int i = 0; i < characterSelectButtons.Length; i++)
+            {
+                if (battlers[i].downed)
+                {
+                    characterSelectButtons[i].interactable = false;
+                }
+            }
             DisableMoveButtons();
             DisableEndTurnButton();
             print("Click on the icon of the character you want to Bless");
@@ -479,9 +555,25 @@ public class BattleManager : MonoBehaviour
         awaitingPlayerSelectFlont = true;
         EnablePlayerButtons();
         characterSelectButtons[2].interactable = false; //Disables flont's selection
-        DisableMoveButtons();
-        DisableEndTurnButton();
-        print("Click on the icon of the character you want to use this move on.");
+        if (battlers[0].downed)
+        {
+            characterSelectButtons[0].interactable = false;
+        }
+        if (battlers[1].downed)
+        {
+            characterSelectButtons[1].interactable = false;
+        }
+        if (!battlers[0].downed && !battlers[1].downed)
+        {
+            DisableMoveButtons();
+            DisableEndTurnButton();
+            print("Click on the icon of the character you want to use this move on.");
+        }
+        else
+        {
+            print("You're doomed.");
+        }
+        
     }
     public void CoagulationButton()
     {

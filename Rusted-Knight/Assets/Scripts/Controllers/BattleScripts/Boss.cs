@@ -92,9 +92,16 @@ public class Boss : CharacterInfo
             }
             else
             {
-                character.ReduceHP(damage);
                 print($"{characterName} hit {character.characterName} for {damage} damage!");
-                dena.DecreaseBelief(5);
+                character.ReduceHP(damage);
+                if (character.downed)
+                {
+                    dena.DecreaseBelief(dena.belief / 2);
+                }
+                else
+                {
+                    dena.DecreaseBelief(5);
+                }
             }
 
         }
