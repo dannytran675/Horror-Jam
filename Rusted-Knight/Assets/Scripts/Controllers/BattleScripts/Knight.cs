@@ -19,7 +19,6 @@ public class Knight : CharacterInfo
     }
     public override void Move1(CharacterInfo character) //guard
     {
-        print("Guard!");
         if (move1CD == 0)
         {
             guarded = true;
@@ -33,18 +32,17 @@ public class Knight : CharacterInfo
     }
     public override void Move2(CharacterInfo character) //attack
     {
-        print("Flurry!");
         SetAccuracy(0.8f); //Put the base accuracy into the method, debuff applied by method
 
         if (CanHit(acc) && move2CD == 0)
         {
             critLanded = IfCrit();
-            int damage = DamageDealt(65, critLanded);
+            int damage = DamageDealt(100, critLanded);
 
             //Attacking
             if (character != null)
             {
-                print($"{characterName} dealt {damage} damage to {character.characterName}!");
+                print($"{characterName} dealt {damage} damage to {character.characterName} using Flurry!");
                 character.ReduceHP(damage);
             }
 
@@ -68,7 +66,6 @@ public class Knight : CharacterInfo
 
     public override void Move3(CharacterInfo character) //slice
     {
-        print("Altrutistic Pierce!");
         SetAccuracy(0.9f); //Put the base accuracy into the method, debuff applied by method
 
         if (CanHit(acc) && move3CD == 0)
@@ -79,7 +76,7 @@ public class Knight : CharacterInfo
             //Attacking
             if (character != null)
             {
-                print($"{characterName} dealt {damage} damage to {character.characterName}!");
+                print($"{characterName} dealt {damage} damage to {character.characterName} using Altruistic Pierce!");
                 character.ReduceHP(damage);
             }
 

@@ -2,12 +2,12 @@ using UnityEngine;
 public class Cleric : CharacterInfo
 {
     public int belief = 50;
-    public int beliefCost1 = 20;
-    public int beliefCost2 = 12;
+    public int beliefCost1 = 25;
+    public int beliefCost2 = 15;
     public int beliefCost3 = 50;
     public void Awake()
     {
-        maxHP = 700;
+        maxHP = 800;
         hp = maxHP;
         fam = 0;
         crit = 0.125f;
@@ -15,15 +15,14 @@ public class Cleric : CharacterInfo
         downed = false;
         characterName = ColourText.DenaColourString("Dena");
         belief = 50;
-        beliefCost1 = 20;
-        beliefCost2 = 12;
+        beliefCost1 = 25;
+        beliefCost2 = 15;
         beliefCost3 = 50;
     }
     public override void Move1(CharacterInfo character) //heal
     {
         if (belief >= beliefCost1)
         {
-            DecreaseBelief(beliefCost1);
             if (character != null)
             {
                 int heal = (character.maxHP / 10) * 3;
@@ -40,6 +39,7 @@ public class Cleric : CharacterInfo
                     heal = (character.maxHP / 10) * 3;
                     print($"{characterName} tried to heal {character.characterName} for {heal} health. But they're too healthy!");
                 }
+                DecreaseBelief(beliefCost1); //Put at end so the consumption is displayed after
             }
 
             usedMove = true;
@@ -54,7 +54,6 @@ public class Cleric : CharacterInfo
 
         if (CanHit(acc) && belief >= beliefCost2)
         {
-            DecreaseBelief(beliefCost2);
 
             critLanded = IfCrit();
             int damage = DamageDealt(150, critLanded);
@@ -62,10 +61,11 @@ public class Cleric : CharacterInfo
             //Attacking
             if (character != null)
             {
-                print($"{characterName} dealt {damage} damage to {character.characterName} using Surpress!");
+                print($"{characterName} dealt {damage} damage to {character.characterName} using Suppress!");
                 character.ReduceHP(damage);
             }
 
+            DecreaseBelief(beliefCost2); //Put at end so the consumption is displayed after
             usedMove = true;
             ResetBoosts();
         }
@@ -73,7 +73,7 @@ public class Cleric : CharacterInfo
         {
             if (character != null)
             {
-                print($"{characterName} tried to use Surpress against {character.characterName} but missed...");
+                print($"{characterName} tried to use Suppress against {character.characterName} but missed...");
                 critLanded = false;
             }
         }
@@ -87,7 +87,6 @@ public class Cleric : CharacterInfo
         print("Necromance!");
         if (belief >= beliefCost3)
         {
-            DecreaseBelief(beliefCost3);
 
             if (character != null && character.hp <= 0)
             {
@@ -96,6 +95,7 @@ public class Cleric : CharacterInfo
                 print($"{characterName} revived {character.characterName} to half health!");
             }
             usedMove = true;
+            DecreaseBelief(beliefCost3); //Put at end so the consumption is displayed after
         }
         
         ResetAccuracyDebuff();
@@ -112,7 +112,7 @@ public class Cleric : CharacterInfo
         {
             int effectiveGain = 100 - belief;
             belief = 100;
-            print(ColourText.GrayString($"{characterName} gained {effectiveGain}% belief."));
+            print(ColourText.GrayString($"{characterName} gained {effectiveGain}% belief due to reaching the limit."));
         }
         else
         {
