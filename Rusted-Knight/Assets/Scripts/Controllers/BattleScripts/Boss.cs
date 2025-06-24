@@ -48,7 +48,6 @@ public class Boss : CharacterInfo
     public void BossTurn()
     {
         float rollMove = Random.Range(0f, 1f);
-
         // FindTarget();
 
         if (rollMove < 0.3f) // 1, 2, 3
@@ -70,7 +69,7 @@ public class Boss : CharacterInfo
         else if (rollMove < 0.9f)// 8, 9
         {
             FindTarget();
-            Attack(target, 400);
+            Attack(target, 300);
         }
         else // 10
         {

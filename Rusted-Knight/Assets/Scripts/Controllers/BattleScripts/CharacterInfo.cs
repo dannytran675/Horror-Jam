@@ -87,6 +87,7 @@ public class CharacterInfo : MonoBehaviour
     public bool IfCrit()
     {
         rnd = Random.Range(0f, 1f);
+        Debug.Log($"{rnd} <= {crit} : {rnd <= crit}");
         return (rnd <= crit);
     }
 

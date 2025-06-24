@@ -66,7 +66,7 @@ public class Flont : CharacterInfo
             print($"{characterName} used Adrenaline on {character.characterName}!");
             int hpOff = character.maxHP / 5;
             character.ReduceHP(hpOff); //20% Max HP Removed
-            character.crit *= 2;
+            character.crit *= 4;
             character.luckBoosted = true;
             print($"{character.characterName} lost {hpOff} HP");
             print($"{character.characterName} feels lucky");

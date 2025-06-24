@@ -6751,7 +6751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Surpress
+  m_text: Suppress
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9731,6 +9731,7 @@ MonoBehaviour:
   - {fileID: 138835244}
   endTurnButton: {fileID: 618210269}
   beliefText: {fileID: 813061526}
+  bossDowned: 0
 --- !u!4 &1273666475
 Transform:
   m_ObjectHideFlags: 0
@@ -11826,7 +11827,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1273666474}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
-        m_MethodName: AltrutisticPierceButton
+        m_MethodName: AltruisticPierceButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12093,7 +12094,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1273666474}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
-        m_MethodName: SurpressButton
+        m_MethodName: SuppressButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

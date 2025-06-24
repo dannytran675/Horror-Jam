@@ -366,9 +366,9 @@ public class BattleManager : MonoBehaviour
     {
         buttonTexts[0].SetText("Guardian");
         buttonTexts[1].SetText("Flurry");
-        buttonTexts[2].SetText("Altrutistic Pierce");
+        buttonTexts[2].SetText("Altruistic Pierce");
         buttonTexts[3].SetText("Bless");
-        buttonTexts[4].SetText("Surpress");
+        buttonTexts[4].SetText("Suppress");
         buttonTexts[5].SetText("Necromance");
         buttonTexts[6].SetText("Coagulation");
         buttonTexts[7].SetText("Revitalize");
@@ -395,10 +395,10 @@ public class BattleManager : MonoBehaviour
         movesSelected[0, 1] = true;
     }
 
-    public void AltrutisticPierceButton()
+    public void AltruisticPierceButton()
     {
         ResetButtonTextsKnight();
-        buttonTexts[2].SetText(ColourText.GreenString("Altrutistic Pierce"));
+        buttonTexts[2].SetText(ColourText.GreenString("Altruistic Pierce"));
         movesSelected[0, 2] = true;
     }
 
@@ -406,7 +406,7 @@ public class BattleManager : MonoBehaviour
     {
         buttonTexts[0].SetText("Guardian");
         buttonTexts[1].SetText("Flurry");
-        buttonTexts[2].SetText("Altrutistic Pierce");
+        buttonTexts[2].SetText("Altruistic Pierce");
         for (int j = 0; j < 3; j++)
         {
             movesSelected[0, j] = false;
@@ -497,10 +497,10 @@ public class BattleManager : MonoBehaviour
         BlessTargetSelect();
     }
 
-    public void SurpressButton()
+    public void SuppressButton()
     {
         ResetButtonTextsDena();
-        buttonTexts[4].SetText(ColourText.GreenString("Surpress"));
+        buttonTexts[4].SetText(ColourText.GreenString("Suppress"));
         movesSelected[1, 1] = true;
     }
 
@@ -516,7 +516,7 @@ public class BattleManager : MonoBehaviour
     public void ResetButtonTextsDena()
     {
         buttonTexts[3].SetText("Bless");
-        buttonTexts[4].SetText("Surpress");
+        buttonTexts[4].SetText("Suppress");
         buttonTexts[5].SetText("Necromance");
         for (int j = 0; j < 3; j++)
         {
@@ -526,7 +526,7 @@ public class BattleManager : MonoBehaviour
 
     public void DenaButtonEnabler()
     {
-        if (dena.belief < 50)
+        if (dena.belief < dena.beliefCost3)
         {
             moveButtons[5].interactable = false;
             CDTexts[5].SetText(ColourText.RedString($"[{dena.beliefCost3}%]"));
@@ -543,7 +543,7 @@ public class BattleManager : MonoBehaviour
             moveButtons[5].interactable = false;
         }
 
-        if (dena.belief < 20)
+        if (dena.belief < dena.beliefCost1)
         {
             moveButtons[3].interactable = false;
             CDTexts[3].SetText(ColourText.RedString($"[{dena.beliefCost1}%]"));
@@ -554,7 +554,7 @@ public class BattleManager : MonoBehaviour
             CDTexts[3].SetText(ColourText.GreenString($"[{dena.beliefCost1}%]"));
         }
 
-        if (dena.belief < 12)
+        if (dena.belief < dena.beliefCost2)
         {
             moveButtons[4].interactable = false;
             CDTexts[4].SetText(ColourText.RedString($"[{dena.beliefCost2}%]"));
@@ -645,11 +645,11 @@ public class BattleManager : MonoBehaviour
                     yield return new WaitUntil(() => singleTurnExecuted);
                     if (!dena.downed && battlers[i].critLanded && battlers[i].usedMove)
                     {
-                        dena.IncreaseBelief(20);
+                        dena.IncreaseBelief(14);
                     }
                     else if (!dena.downed && battlers[i].usedMove)
                     {
-                        dena.IncreaseBelief(10);
+                        dena.IncreaseBelief(7);
                     }
                     UpdateDisplay();
                 }
@@ -665,6 +665,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             battlers[i].usedMove = false;
+            battlers[i].critLanded = false;
         }
         turnsExecuted = true;
     }
@@ -684,7 +685,7 @@ public class BattleManager : MonoBehaviour
                     battler.Move2(demonKing); //Flurry
                     break;
                 case 2:
-                    battler.Move3(demonKing); //Altrutistic Pierce
+                    battler.Move3(demonKing); //Altruistic Pierce
                     break;
             }
         }
@@ -698,7 +699,7 @@ public class BattleManager : MonoBehaviour
                     battler.Move1(denaTarget); //Bless
                     break;
                 case 1:
-                    battler.Move2(demonKing); //Surpress
+                    battler.Move2(demonKing); //Suppress
                     break;
                 case 2:
                     battler.Move3(denaTarget); //Necromance
